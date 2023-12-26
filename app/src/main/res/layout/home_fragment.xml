@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeScroll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/homebackground"
+    tools:context=".ui.fragments.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/firstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="350dp"
+            android:background="@drawable/mapbgcopy"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/contentOne"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/rubikmedium"
+                android:gravity="top"
+                android:text="@string/lets_book_your_service"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/profile"
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/ic_profile_1x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/contentOne"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/secondLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="-270dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/home_fragment_curve"
+            android:elevation="5dp"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@+id/firstLayout">
+
+
+            <TextView
+                android:id="@+id/contentTwo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/rubikmedium"
+                android:gravity="center"
+                android:text="@string/what_s_your_travel_plan"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <RadioGroup
+                android:id="@+id/radioGate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintTop_toBottomOf="@+id/contentTwo">
+
+                <RadioButton
+                    android:id="@+id/direct"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:buttonTint="@color/green"
+                    android:fontFamily="@font/rubikmedium"
+                    android:text="@string/direct_flight"
+                    android:textColor="@color/textcolor"
+                    android:textSize="13sp" />
+
+                <RadioButton
+                    android:id="@+id/transits"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/rubikmedium"
+                    android:text="@string/i_have_transits"
+                    android:textColor="@color/grey"
+                    android:textSize="13sp" />
+            </RadioGroup>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/callback"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/radioGate"
+                android:layout_marginStart="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/logincurve"
+                app:layout_constraintTop_toBottomOf="@+id/radioGate">
+
+                <TextView
+                    android:id="@+id/from"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/rubikregular"
+                    android:text="@string/from"
+                    android:textColor="@color/grey"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <AutoCompleteTextView
+                    android:id="@+id/fromEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="40dp"
+                    android:layout_marginStart="10dp"
+                    android:backgroundTint="@color/white"
+                    android:background="@null"
+                    android:fontFamily="@font/rubikmedium"
+                    android:hint="@string/enter_airport"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:textAlignment="viewStart"
+                    android:textColor="@color/textcolor"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toBottomOf="@+id/from"
+                    tools:ignore="LabelFor" />
+
+                <View
+                    android:id="@+id/viewOne"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/fromEdit"
+                    android:background="@color/liteGrey"
+                    app:layout_constraintTop_toBottomOf="@+id/fromEdit" />
+
+
+                <TextView
+                    android:id="@+id/to"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/viewOne"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/rubikregular"
+                    android:text="@string/to"
+                    android:textColor="@color/grey"
+                    android:textSize="14sp"
+                    app:layout_constraintTop_toBottomOf="@+id/viewOne" />
+
+
+                <AutoCompleteTextView
+                    android:id="@+id/toEdit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:backgroundTint="@color/white"
+                    android:fontFamily="@font/rubikmedium"
+                    android:background="@null"
+                    android:minHeight="40dp"
+                    android:hint="@string/enter_airport"
+                    android:imeOptions="actionDone"
+                    android:singleLine="true"
+                    android:textColor="@color/textcolor"
+                    android:textSize="13sp"
+                    app:layout_constraintTop_toBottomOf="@+id/to"
+                    tools:ignore="LabelFor" />
+
+                <View
+                    android:id="@+id/viewTwo"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_below="@+id/toEdit"
+                    android:background="@color/liteGrey"
+                    app:layout_constraintTop_toBottomOf="@+id/toEdit" />
+
+                <LinearLayout
+                    android:id="@+id/linear"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/viewTwo"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/viewTwo">
+
+
+                    <RelativeLayout
+                        android:id="@+id/departTeam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+
+                        <TextView
+                            android:id="@+id/depart"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/rubikregular"
+                            android:text="@string/flight_date"
+                            android:textColor="@color/grey"
+                            android:textSize="12sp" />
+
+
+                        <TextView
+                            android:id="@+id/departEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/depart"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="20dp"
+                            android:backgroundTint="@color/white"
+                            android:minHeight="40dp"
+                            android:hint="Enter Flight Date"
+                            android:fontFamily="@font/rubikmedium"
+                            android:gravity="start|center"
+                            android:singleLine="true"
+                            android:textColor="@color/textcolor"
+                            android:textSize="13sp" />
+
+                    </RelativeLayout>
+
+                    <View
+                        android:id="@+id/viewThree"
+                        android:layout_width="1dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey" />
+
+                    <RelativeLayout
+                        android:id="@+id/departFlightTeam"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+
+                        <TextView
+                            android:id="@+id/departFlight"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="10dp"
+                            android:fontFamily="@font/rubikregular"
+                            android:text="@string/flight_number"
+                            android:textColor="@color/grey"
+                            android:textSize="12sp" />
+
+                        <androidx.appcompat.widget.AppCompatEditText
+                            android:id="@+id/departFlightEdit"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/departFlight"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginEnd="20dp"
+                            android:background="@null"
+                            android:minHeight="40dp"
+                            android:backgroundTint="@color/white"
+                            android:fontFamily="@font/rubikmedium"
+                            android:gravity="start|center"
+                            android:hint="Enter Flight Number"
+                            android:maxLength="10"
+                            android:singleLine="true"
+                            android:textColor="@color/textcolor"
+                            android:textSize="13sp"
+                            tools:ignore="LabelFor" />
+                    </RelativeLayout>
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bookService"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_below="@+id/callback"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/rubikmedium"
+                android:letterSpacing="0"
+                android:text="@string/search_service"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:cornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/callback"
+                app:layout_constraintVertical_bias="0.0" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/offersHeader"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="@string/offers_only_for_you"-->
+        <!--                android:layout_marginStart="20dp"-->
+        <!--                android:layout_marginTop="40dp"-->
+        <!--                android:fontFamily="@font/rubikmedium"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="17sp"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/secondLayout"-->
+        <!--                android:layout_below="@+id/secondLayout"/>-->
+
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+        <!--            android:id="@+id/offers"-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_marginTop="15dp"-->
+        <!--            android:layout_marginStart="20dp"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:visibility="visible"-->
+        <!--            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/offersHeader" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/serviceHeader"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="@string/top_services_from_the_elite"-->
+        <!--                android:layout_marginStart="20dp"-->
+        <!--                android:layout_marginTop="40dp"-->
+        <!--                android:fontFamily="@font/rubikmedium"-->
+        <!--                android:textColor="@color/black"-->
+        <!--                android:textSize="17sp"-->
+        <!--                app:layout_constraintTop_toBottomOf="@+id/offers"/>-->
+
+        <!--        <androidx.recyclerview.widget.RecyclerView-->
+        <!--            android:id="@+id/topServices"-->
+        <!--            android:layout_width="0dp"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:layout_marginTop="10dp"-->
+        <!--            android:layout_marginStart="20dp"-->
+        <!--            android:orientation="horizontal"-->
+        <!--            android:visibility="visible"-->
+        <!--            app:spanCount="2"-->
+        <!--            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"-->
+        <!--            app:layout_constraintEnd_toEndOf="parent"-->
+        <!--            app:layout_constraintStart_toStartOf="parent"-->
+        <!--            app:layout_constraintTop_toBottomOf="@+id/serviceHeader" />-->
+
+
+        <LinearLayout
+            android:id="@+id/recyclerOrganizer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/secondLayout">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp">
+
+                <TextView
+                    android:id="@+id/upcomingServices"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/rubikmedium"
+                    android:text="@string/upcoming_services"
+                    android:textColor="@color/textcolor"
+                    android:textSize="17sp" />
+
+                <TextView
+                    android:id="@+id/viewAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="10dp"
+                    android:fontFamily="@font/rubikmedium"
+                    android:padding="5dp"
+                    android:text="@string/view_all"
+                    android:textColor="@color/blue"
+                    android:textSize="15sp" />
+
+            </RelativeLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/bookingList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:clipToPadding="false"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:paddingRight="20dp"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <TextView
+                android:id="@+id/availableServices"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/available_services"
+                android:textColor="@color/textcolor"
+                android:textSize="17sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/availableServicesList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <TextView
+                android:id="@+id/ourPartners"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/our_partners"
+                android:textColor="@color/textcolor"
+                android:textSize="17sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/partnersList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <TextView
+                android:id="@+id/service_weHeader"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/services_we_offer"
+                android:textColor="@color/textcolor"
+                android:textSize="17sp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/services"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:orientation="horizontal"
+                android:overScrollMode="never"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lookServiceLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:background="#7770B6"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerOrganizer">
+
+            <TextView
+                android:id="@+id/lookServiceClick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/_4_clicks_from_your_hassle"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/lookServiceFree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/free_travel"
+                android:visibility="gone"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:layout_constraintStart_toStartOf="@+id/lookServiceClick"
+                app:layout_constraintTop_toBottomOf="@+id/lookServiceClick" />
+
+            <View
+                android:id="@+id/lookServiceView"
+                android:layout_width="2dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="20dp"
+                android:background="#948AD2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/lookServiceFree" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/stepone"
+                app:layout_constraintEnd_toEndOf="@+id/lookServiceView"
+                app:layout_constraintStart_toStartOf="@+id/lookServiceView"
+                app:layout_constraintTop_toTopOf="@+id/lookServicePackage" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/steptwo"
+                app:layout_constraintEnd_toEndOf="@+id/lookServiceView"
+                app:layout_constraintStart_toStartOf="@+id/lookServiceView"
+                app:layout_constraintTop_toTopOf="@+id/lookServiceConform" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/stepthree"
+                app:layout_constraintEnd_toEndOf="@+id/lookServiceView"
+                app:layout_constraintStart_toStartOf="@+id/lookServiceView"
+                app:layout_constraintTop_toTopOf="@+id/lookServiceMeetup" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/stepfour"
+                app:layout_constraintEnd_toEndOf="@+id/lookServiceView"
+                app:layout_constraintStart_toStartOf="@+id/lookServiceView"
+                app:layout_constraintTop_toTopOf="@+id/lookServiceEnjoy" />
+
+            <TextView
+                android:id="@+id/lookServicePackage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/choose_a_package_that_suits_you"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/lookServiceView"
+                app:layout_constraintTop_toBottomOf="@+id/lookServiceFree" />
+
+            <TextView
+                android:id="@+id/lookServiceConform"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/conform_your_booking"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/lookServicePackage"
+                app:layout_constraintTop_toBottomOf="@+id/lookServicePackage" />
+
+            <TextView
+                android:id="@+id/lookServiceMeetup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/meet_us_at_the_airport"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/lookServiceConform"
+                app:layout_constraintTop_toBottomOf="@+id/lookServiceConform" />
+
+            <TextView
+                android:id="@+id/lookServiceEnjoy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/enjoy_a_convenient_amp_comfortable_trip"
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/lookServiceMeetup"
+                app:layout_constraintTop_toBottomOf="@+id/lookServiceMeetup" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/lookServiceButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/black"
+                android:fontFamily="@font/rubikmedium"
+                android:letterSpacing="0"
+                android:text="@string/lets_book_a_service"
+                android:textAllCaps="false"
+                app:cornerRadius="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/lookServiceFree"
+                app:layout_constraintTop_toBottomOf="@+id/lookServiceEnjoy" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lookJourneyLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lookServiceLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_world"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/journeyLogo"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:src="@drawable/airportzologo"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/journeyText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/make_your_journey_as_enjoyable_as_the_destination"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/journeyLogo" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/journeyLocation"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:src="@drawable/ic_location_1x"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/journeyText" />
+
+            <TextView
+                android:id="@+id/journeyLocationCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/_150"
+                android:textColor="@color/blue"
+                android:textSize="34sp"
+                app:layout_constraintStart_toEndOf="@+id/journeyLocation"
+                app:layout_constraintTop_toTopOf="@+id/journeyLocation" />
+
+            <TextView
+                android:id="@+id/journeyLocations"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/locations_worldwide"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/journeyLocation"
+                app:layout_constraintStart_toStartOf="@+id/journeyLocationCount"
+                app:layout_constraintTop_toBottomOf="@+id/journeyLocationCount" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/journeyAirport"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_terminal_1x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/journeyLocation" />
+
+            <TextView
+                android:id="@+id/journeyAirportCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/_3_200"
+                android:textColor="@color/blue"
+                android:textSize="34sp"
+                app:layout_constraintStart_toEndOf="@+id/journeyAirport"
+                app:layout_constraintTop_toTopOf="@+id/journeyAirport" />
+
+            <TextView
+                android:id="@+id/journeyAirports"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/airport_terminals"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/journeyAirportCount"
+                app:layout_constraintTop_toBottomOf="@+id/journeyAirportCount" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

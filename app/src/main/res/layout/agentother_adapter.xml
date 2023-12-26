@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    app:cardCornerRadius="14dp"
+    android:layout_marginTop="10dp"
+    app:cardElevation="0dp"
+    app:cardBackgroundColor="#f8fbfb"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.vipulasri.ticketview.TicketView
+            android:id="@+id/ticketView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:dividerPadding="0dp"
+            app:ticketDividerType="dash"
+            app:layout_constraintTop_toTopOf="parent"
+            app:ticketOrientation="horizontal"
+            app:ticketScallopPositionPercent="50"
+            app:ticketScallopRadius="15dp"
+            app:ticketBackgroundColor="@color/white"
+            app:ticketCornerRadius="14dp"
+            app:ticketCornerType="rounded"
+            app:ticketElevation="3dp" />
+
+        <View
+            android:id="@+id/nameView"
+            android:layout_width="0dp"
+            android:layout_height="5dp"
+            android:background="#7dd9aa"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="26dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="22dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide3"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_end="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide5"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="50dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide6"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="10dp" />
+
+        <TextView
+            android:id="@+id/aAirportList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikmedium"
+            android:text="@string/View"
+            android:textColor="@color/textcolor"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/guide"
+            app:layout_constraintTop_toTopOf="@+id/guide2" />
+
+        <TextView
+            android:id="@+id/dDatAndTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/View"
+            android:textColor="@color/greyText"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/guide1"
+            app:layout_constraintStart_toStartOf="@+id/guide"
+            app:layout_constraintTop_toBottomOf="@id/aAirportList" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/aPlaneImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_more_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/aAirportList"
+            app:layout_constraintEnd_toStartOf="@+id/guide6"
+            app:layout_constraintTop_toTopOf="@+id/aAirportList" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1.5dp"
+            android:background="#f2f4f7"
+            android:layout_marginTop="18dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/dDatAndTime"
+            app:layout_constraintStart_toStartOf="@id/guide"
+            app:layout_constraintEnd_toEndOf="@id/guide1"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_flight_grey_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintEnd_toStartOf="@+id/guide1"
+            app:layout_constraintStart_toStartOf="@+id/guide"
+            app:layout_constraintTop_toTopOf="@id/view" />
+
+        <TextView
+            android:id="@+id/pPassenger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/passenger"
+            android:textColor="@color/greyText"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/rubikregular"
+            android:textSize="12sp"
+            app:layout_constraintTop_toBottomOf="@id/view"
+            app:layout_constraintStart_toStartOf="@id/guide"/>
+
+        <TextView
+            android:id="@+id/pPassengerListCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:text="@string/View"
+            android:textColor="@color/textcolor"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/rubikregular"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/guide"
+            app:layout_constraintTop_toBottomOf="@+id/pPassenger" />
+
+        <TextView
+            android:id="@+id/pPassengerList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:layout_marginStart="2dp"
+            android:text="@string/adults"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/pPassengerListCount"
+            app:layout_constraintStart_toEndOf="@+id/pPassengerListCount" />
+
+        <TextView
+            android:id="@+id/childrenListCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:layout_marginStart="3dp"
+            android:text="@string/View"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/pPassengerList"
+            app:layout_constraintStart_toEndOf="@+id/pPassengerList" />
+
+        <TextView
+            android:id="@+id/childrenList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:layout_marginStart="2dp"
+            android:text="@string/children"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/childrenListCount"
+            app:layout_constraintStart_toEndOf="@+id/childrenListCount" />
+
+        <TextView
+            android:id="@+id/sService"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/total_services"
+            android:textSize="12sp"
+            android:textColor="@color/greyText"
+            android:fontFamily="@font/rubikregular"
+            app:layout_constraintBaseline_toBaselineOf="@+id/pPassenger"
+            app:layout_constraintEnd_toEndOf="@id/guide5" />
+
+        <TextView
+            android:id="@+id/services"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/services"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/pPassengerList"
+            app:layout_constraintEnd_toEndOf="@id/guide5" />
+
+        <TextView
+            android:id="@+id/serviceCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:layout_marginEnd="2dp"
+            android:text="@string/View"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/services"
+            app:layout_constraintEnd_toStartOf="@+id/services" />
+
+
+        <TextView
+            android:id="@+id/aAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/View"
+            android:textColor="@color/textcolor"
+            android:textSize="20sp"
+            android:fontFamily="@font/rubikmedium"
+            app:layout_constraintBottom_toTopOf="@+id/guide3"
+            app:layout_constraintEnd_toStartOf="@+id/guide1"
+            app:drawableStartCompat="@drawable/ic_rupee_1x" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/nestedScrollView"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.fragments.CheckoutFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cCheckoutRootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@drawable/gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/checkoutBack"
+                android:layout_width="30dp"
+                android:layout_height="?actionBarSize"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_back_1x"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/checkoutBackText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/checkout"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/checkoutBack"
+                app:layout_constraintStart_toEndOf="@+id/checkoutBack"
+                app:layout_constraintTop_toTopOf="@+id/checkoutBack" />
+
+
+            <TextView
+                android:id="@+id/summaryPaySelect"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/total_amount"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/checkoutBackText" />
+
+            <TextView
+                android:id="@+id/cCheckoutAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/View"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/summaryPaySelect"
+                app:layout_constraintTop_toBottomOf="@+id/summaryPaySelect"
+                app:drawableTint="@color/white" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+<!--        first layout-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cCheckoutLayoutPassenger"
+            android:visibility="visible"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/aJourney1center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cCheckoutImg"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="50dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_ongoing_status"
+                app:layout_constraintEnd_toStartOf="@+id/aJourney1center"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cDashImage"
+                android:layout_width="120dp"
+                android:layout_height="5dp"
+                android:layerType="software"
+                android:src="@drawable/dotted_line"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@+id/cCheckoutImg"
+                app:layout_constraintStart_toEndOf="@id/cCheckoutImg"
+                app:layout_constraintTop_toTopOf="@+id/cCheckoutImg" />
+
+            <TextView
+                android:id="@+id/metCircleShape"
+                android:layout_width="7dp"
+                android:layout_height="7dp"
+                android:background="@drawable/shapecircle"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/cDashImage"
+                app:layout_constraintStart_toStartOf="@+id/cUnCheckImg"
+                app:layout_constraintTop_toTopOf="@+id/cDashImage" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cUnCheckImg"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_ongoing_status"
+                app:layout_constraintBottom_toBottomOf="@+id/cDashImage"
+                app:layout_constraintStart_toEndOf="@+id/cDashImage"
+                app:layout_constraintTop_toTopOf="@+id/cDashImage" />
+
+            <TextView
+                android:id="@+id/cPassenger"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/passenger_details"
+                android:textSize="20sp"
+                android:textColor="@color/textcolor"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/rubikmedium"
+                app:layout_constraintEnd_toEndOf="@+id/cCheckoutImg"
+                app:layout_constraintStart_toStartOf="@+id/cCheckoutImg"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutImg" />
+
+            <TextView
+                android:id="@+id/cOtherDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other_details"
+                android:visibility="gone"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cPassenger"
+                app:layout_constraintEnd_toEndOf="@+id/cUnCheckImg"
+                app:layout_constraintStart_toStartOf="@+id/cUnCheckImg" />
+
+            <TextView
+                android:id="@+id/cContactPassenger"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:text="@string/lead_passenger_details"
+                app:layout_constraintStart_toStartOf="@+id/guide"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintTop_toBottomOf="@+id/cPassenger" />
+
+            <TextView
+                android:id="@+id/cContactPassengerHint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/all_calls_and_message_will_be_delivered_to_this_passenger"
+                app:layout_constraintTop_toBottomOf="@id/cContactPassenger"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="@id/guide1"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cContactPassengerRecyclerview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/cContactPassengerHint"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="@id/guide1"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cContactBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:text="@string/add_lead_passenger"
+                android:textAllCaps="false"
+                android:textColor="@color/blue"
+                android:visibility="visible"
+                app:cornerRadius="6dp"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toBottomOf="@+id/cContactPassengerRecyclerview"
+                app:strokeColor="@color/blue"
+                app:strokeWidth="1dp" />
+
+            <TextView
+                android:id="@+id/cOther"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/other_passenger_details"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toBottomOf="@id/cContactBtn" />
+
+            <TextView
+                android:id="@+id/cOtherPassenger"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/enter_the_details_of_other_passengers"
+                app:layout_constraintEnd_toStartOf="@+id/guide1"
+                app:layout_constraintStart_toStartOf="@+id/guide"
+                app:layout_constraintTop_toBottomOf="@+id/cOther" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cContactOtherPassengerRecyclerview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintTop_toBottomOf="@+id/cOtherPassenger"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="@id/guide1"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cOtherBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="12dp"
+                app:strokeWidth="1dp"
+                android:visibility="visible"
+                app:strokeColor="@color/blue"
+                app:cornerRadius="4dp"
+                android:textColor="@color/blue"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:text="@string/add_other_passenger"
+                app:layout_constraintTop_toBottomOf="@+id/cContactOtherPassengerRecyclerview"
+                app:layout_constraintStart_toStartOf="@id/guide" />
+
+            <View
+                android:id="@+id/cPassengerView"
+                android:layout_width="0dp"
+                android:layout_height="1.5dp"
+                android:background="@color/liteGrey"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/cOtherBtn"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="@id/guide1"/>
+
+            <TextView
+                android:id="@+id/cGreeterDetail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="23dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/alternative_contact"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toBottomOf="@id/cPassengerView" />
+
+
+            <TextView
+                android:id="@+id/greeterPassengerOptional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:visibility="invisible"
+                android:text="@string/optional"
+                android:fontFamily="@font/rubikmedium"
+                app:layout_constraintBottom_toBottomOf="@+id/cGreeterDetail"
+                app:layout_constraintStart_toEndOf="@+id/cGreeterDetail"
+                app:layout_constraintTop_toTopOf="@+id/cGreeterDetail" />
+
+
+            <TextView
+                android:id="@+id/cGreeterPassenger"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:textSize="14sp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/help_us_reach_your_dear_ones_and_keep_them_informed"
+                app:layout_constraintEnd_toStartOf="@+id/guide1"
+                app:layout_constraintStart_toStartOf="@+id/guide"
+                app:layout_constraintTop_toBottomOf="@+id/cGreeterDetail" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cGreeterHintImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_info_1x"
+                android:layout_marginTop="12dp"
+                app:layout_constraintStart_toStartOf="@+id/guide"
+                app:layout_constraintTop_toBottomOf="@id/cGreeterPassenger"/>
+
+            <TextView
+                android:id="@+id/cGreeterHint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:text="@string/greeter_family_contact_should_not_be_in_your_passenger_list"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/cGreeterHintImg"
+                app:layout_constraintEnd_toStartOf="@+id/guide1"
+                app:layout_constraintStart_toEndOf="@+id/cGreeterHintImg"
+                app:layout_constraintTop_toTopOf="@+id/cGreeterHintImg" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cContactServicePassengerRecyclerview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:layout_constraintTop_toBottomOf="@+id/cGreeterHint"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/guide1"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cGreeterBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="12dp"
+                app:strokeWidth="1dp"
+                android:visibility="visible"
+                app:strokeColor="@color/blue"
+                app:cornerRadius="8dp"
+                android:textColor="@color/blue"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:text="@string/alternate_contact"
+                app:layout_constraintTop_toBottomOf="@+id/cContactServicePassengerRecyclerview"
+                app:layout_constraintStart_toStartOf="@id/guide" />
+
+            <View
+                android:id="@+id/cGreeterView"
+                android:layout_width="0dp"
+                android:layout_height="1.5dp"
+                android:background="@color/liteGrey"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/cGreeterBtn"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="@id/guide1"/>
+
+            <TextView
+                android:id="@+id/cUpload"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/upload_e_ticket_mandatory"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toBottomOf="@+id/cGreeterView"/>
+
+            <TextView
+                android:id="@+id/cUploadHint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textSize="14sp"
+                android:text="@string/upload_your_flight_ticket"
+                app:layout_constraintTop_toBottomOf="@id/cUpload"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintStart_toStartOf="@id/guide"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/uploadRecyclerview"
+                android:layout_width="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toStartOf="@+id/guide1"
+                app:layout_constraintStart_toStartOf="@+id/guide"
+                app:layout_constraintTop_toBottomOf="@+id/cUploadHint" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cUploadBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="12dp"
+                app:strokeWidth="1dp"
+                app:strokeColor="@color/blue"
+                app:cornerRadius="8dp"
+                android:visibility="visible"
+                android:textColor="@color/blue"
+                android:textAllCaps="false"
+                android:layout_height="wrap_content"
+                android:text="@string/upload_e_ticket"
+                app:layout_constraintTop_toBottomOf="@+id/uploadRecyclerview"
+                app:layout_constraintStart_toStartOf="@id/guide" />
+
+
+            <View
+                android:id="@+id/cPassengerView1"
+                android:layout_width="0dp"
+                android:layout_height="1.5dp"
+                android:background="@color/liteGrey"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/cUploadBtn"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="@id/guide1"/>
+
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/cUploadBtn"
+                android:layout_alignParentEnd="true"
+                android:backgroundTint="@color/green"
+                android:src="@drawable/ic_next_1x"
+                app:fabSize="auto"
+                android:visibility="gone"
+                app:tint="@android:color/white"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/otherPassengerOptional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:visibility="gone"
+                android:text="@string/optional"
+                android:fontFamily="@font/rubikmedium"
+                app:layout_constraintBottom_toBottomOf="@+id/cOther"
+                app:layout_constraintStart_toEndOf="@+id/cOther"
+                app:layout_constraintTop_toTopOf="@+id/cOther" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+<!--        //second layout-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cCheckoutLayoutGst"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cCheckoutLayoutPassenger">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/start"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/end"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cCheckoutImg1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="50dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_tick_blue_1x"
+                app:layout_constraintEnd_toStartOf="@+id/center"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/aJourney1View3"
+                android:layout_width="120dp"
+                android:layout_height="1dp"
+                android:background="#0FB3D4"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="@+id/cCheckoutImg1"
+                app:layout_constraintStart_toEndOf="@+id/cCheckoutImg1"
+                app:layout_constraintTop_toTopOf="@+id/cCheckoutImg1" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cUncheckImg1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:visibility="gone"
+                android:src="@drawable/ic_ongoing_status"
+                app:layout_constraintBottom_toBottomOf="@+id/aJourney1View3"
+                app:layout_constraintStart_toEndOf="@+id/aJourney1View3"
+                app:layout_constraintTop_toTopOf="@+id/aJourney1View3" />
+
+
+            <TextView
+                android:id="@+id/cPassenger1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/passenger_details"
+                android:textColor="@color/textcolor"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/cCheckoutImg1"
+                app:layout_constraintStart_toStartOf="@+id/cCheckoutImg1"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutImg1" />
+
+            <TextView
+                android:id="@+id/cOtherDetails1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/other_details"
+                android:textColor="@color/textcolor"
+                android:textSize="12sp"
+                android:visibility="gone"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cPassenger1"
+                app:layout_constraintEnd_toEndOf="@+id/cUncheckImg1"
+                app:layout_constraintStart_toStartOf="@+id/cUncheckImg1" />
+
+            <TextView
+                android:id="@+id/cCheckoutPan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/pan_details"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cPassenger1" />
+
+            <TextView
+                android:id="@+id/cCheckoutPanOptional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/optional"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cCheckoutPan"
+                app:layout_constraintStart_toEndOf="@+id/cCheckoutPan" />
+
+            <TextView
+                android:id="@+id/cCheckoutPanClaimTax"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/add_pan_number_to_claim_tax"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutPan" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cCheckoutPanLayout"
+                android:layout_width="0dp"
+                android:layout_height="54dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/logincurve"
+                app:layout_constraintEnd_toStartOf="@+id/end"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutPanClaimTax">
+
+                <TextView
+                    android:id="@+id/cCheckoutPanTextview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="9dp"
+                    android:fontFamily="@font/rubikregular"
+                    android:text="@string/pan_number"
+                    android:textSize="12sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/cCheckoutPanEdittext"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:background="@null"
+                    android:ems="1"
+                    android:fontFamily="@font/rubikmedium"
+                    android:maxLines="1"
+                    android:textAllCaps="true"
+                    android:textColor="@color/textcolor"
+                    android:textSize="14sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/cCheckoutPanTextview"
+                    app:layout_constraintTop_toBottomOf="@id/cCheckoutPanTextview" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/cCheckoutPanView"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="22dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutPanLayout" />
+
+            <TextView
+                android:id="@+id/cCheckoutGst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/gstin_for_this_booking"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutPanView" />
+
+            <TextView
+                android:id="@+id/cCheckoutGstOptional"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/optional"
+                android:textSize="12sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/cCheckoutGst"
+                app:layout_constraintStart_toEndOf="@+id/cCheckoutGst" />
+
+            <TextView
+                android:id="@+id/cCheckoutGstClaimTax"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/add_gst_number_to_avail_its_benefits"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutGst" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cCheckoutGstNo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutGstClaimTax" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/cCheckoutGstBtn"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12sp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/add_gstin"
+                android:textAllCaps="false"
+                android:textColor="@color/blue"
+                android:textStyle="bold"
+                app:cornerRadius="8dp"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutGstNo"
+                app:strokeColor="@color/blue"
+                app:strokeWidth="1dp" />
+
+            <View
+                android:id="@+id/cCheckoutGstView"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="22dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutGstBtn" />
+
+            <TextView
+                android:id="@+id/cCheckoutPlaceCard"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/meet_and_greet_placard_details"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutGstView" />
+
+            <TextView
+                android:id="@+id/cCheckoutPlaceCardHint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/welcome_your_guests_in_the_way_you_want"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutPlaceCard" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cCheckoutPlaceCardDetail"
+                android:layout_width="0dp"
+                android:layout_height="112dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/logincurve"
+                app:layout_constraintEnd_toStartOf="@+id/end"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutPlaceCardHint">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/cCheckoutPlaceCardDetailEdittext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@null"
+                    android:fontFamily="@font/rubikmedium"
+                    android:hint="@string/eg_hello_zach_welcome_to_india_we_wish_you_have_a_great_experience_and_memories_during_your_stayHere"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:id="@+id/cCheckoutPlaceCardView"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="22dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutPlaceCardDetail" />
+
+            <TextView
+                android:id="@+id/cCheckoutFlower"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/flower_and_bouquet_details"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutPlaceCardView" />
+
+            <TextView
+                android:id="@+id/cCheckoutFlowerHint"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/send_a_personalized_note_for_your_loved_ones"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutFlower" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/cCheckoutFlowerDetail"
+                android:layout_width="0dp"
+                android:layout_height="112dp"
+                android:layout_marginTop="17dp"
+                android:background="@drawable/logincurve"
+                android:visibility="gone"
+                app:layout_constraintEnd_toStartOf="@+id/end"
+                app:layout_constraintStart_toStartOf="@+id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutFlowerHint">
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/cCheckoutFlowerDetailEdittext"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@null"
+                    android:fontFamily="@font/rubikmedium"
+                    android:hint="@string/eg_i_am_fortunate_to_have_you_in_my_life_and_i_wish_you_have_a_great_day"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/aServiceTermsLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/cCheckoutFlowerDetail">
+
+                <CheckBox
+                    android:id="@+id/aServiceCheckbox"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:buttonTint="@color/green"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/termsTextView"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:text="@string/str_terms_and_privacy"
+                    android:textColor="@color/textcolor"
+                    app:layout_constraintBottom_toBottomOf="@+id/aServiceCheckbox"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/aServiceCheckbox"
+                    app:layout_constraintTop_toTopOf="@+id/aServiceCheckbox" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/checkOut"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/proceed_to_pay"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:visibility="visible"
+                app:cornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="@id/end"
+                app:layout_constraintStart_toStartOf="@id/start"
+                app:layout_constraintTop_toBottomOf="@+id/aServiceTermsLayout" />
+
+            <TextView
+                android:id="@+id/last"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginStart="3dp"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkOut" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

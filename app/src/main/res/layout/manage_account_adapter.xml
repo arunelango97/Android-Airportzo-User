@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/card"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:layout_marginTop="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/logincurve">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rootStart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="10dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rootEnd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="10dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bankImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="15dp"
+        android:src="@drawable/bank"
+        app:layout_constraintStart_toStartOf="@+id/rootStart"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/bankName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/rubikmedium"
+        android:text="Android"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@+id/bankImage"
+        app:layout_constraintTop_toTopOf="@+id/bankImage" />
+
+    <TextView
+        android:id="@+id/bankNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubikregular"
+        android:layout_marginTop="7dp"
+        android:text="Desktop"
+        android:textColor="@color/grey"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/bankName"
+        app:layout_constraintTop_toBottomOf="@+id/bankName" />
+
+    <TextView
+        android:id="@+id/bankPlace"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:fontFamily="@font/rubikregular"
+        android:textColor="@color/grey"
+        android:textSize="15sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bankNo"
+        app:layout_constraintStart_toEndOf="@+id/bankNo" />
+
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Logout"
+        android:layout_marginEnd="20dp"
+        android:textSize="15sp"
+        android:fontFamily="@font/rubikbold"
+        android:textColor="#0FB3D4"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/loggedIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4 months ago"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/greyText"
+        android:textSize="12sp"
+        android:visibility="visible"
+        app:layout_constraintStart_toStartOf="@+id/bankNo"
+        app:layout_constraintTop_toBottomOf="@+id/bankNo" />
+
+    <TextView
+        android:id="@+id/primary"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/manage_curve"
+        android:drawablePadding="4dp"
+        android:fontFamily="@font/rubikregular"
+        android:padding="4dp"
+        android:text="Current Device"
+        android:textColor="@color/green"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bankName"
+        app:layout_constraintTop_toBottomOf="@+id/bankPlace" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

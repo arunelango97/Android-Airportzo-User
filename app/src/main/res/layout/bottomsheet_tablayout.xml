@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout"
+    style="@style/MYBottomSheetStyle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/topcurve"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cService"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/ic_close_1x"
+        app:layout_constraintEnd_toStartOf="@+id/guide1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/img2"
+        android:layout_width="50dp"
+        android:layout_height="44dp"
+        android:src="@drawable/mapbgcopy"
+        app:layout_constraintStart_toStartOf="@id/guide"
+        app:layout_constraintTop_toBottomOf="@id/cService" />
+
+
+    <TextView
+        android:id="@+id/cServiceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="@string/View"
+        android:textColor="@color/textcolor"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/img2"
+        app:layout_constraintTop_toTopOf="@+id/img2" />
+
+    <TextView
+        android:id="@+id/cServiceAirportName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="@string/View"
+        android:textColor="@color/greyText"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="@+id/img2"
+        app:layout_constraintStart_toEndOf="@+id/img2"
+        app:layout_constraintTop_toBottomOf="@id/cServiceName" />
+
+    <TextView
+        android:id="@+id/cTerminal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="@string/View"
+        android:textSize="14sp"
+        android:textColor="@color/greyText"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cServiceAirportName"
+        app:layout_constraintStart_toEndOf="@+id/cServiceAirportName" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/text3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/review_background"
+        android:drawablePadding="2dp"
+        android:paddingStart="5dp"
+        android:paddingEnd="7dp"
+        android:text=" 4"
+        android:textColor="@color/white"
+        app:drawableStartCompat="@drawable/ic_star_1x"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cTerminal"
+        app:layout_constraintEnd_toStartOf="@+id/guide1" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/myTabLayout"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        android:layout_marginTop="27dp"
+        app:layout_constraintEnd_toEndOf="@id/guide1"
+        app:layout_constraintStart_toStartOf="@id/guide"
+        app:layout_constraintTop_toBottomOf="@id/cServiceAirportName"
+        app:tabIndicatorColor="@color/blue"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextAppearance="@style/TabLayoutTextFont"/>
+
+    <View
+        android:id="@+id/cServiceView"
+        android:layout_width="0dp"
+        android:layout_height="1.5dp"
+        android:background="@color/liteGrey"
+        app:layout_constraintEnd_toEndOf="@id/guide1"
+        app:layout_constraintStart_toStartOf="@id/guide"
+        app:layout_constraintTop_toBottomOf="@+id/myTabLayout" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/myViewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cServiceView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+

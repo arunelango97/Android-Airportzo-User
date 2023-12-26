@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.UpdateProfileFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintHeight_percent="0.1"
+        android:background="@drawable/gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/updateProfileBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_back_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/rootLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rootLayout" />
+
+        <TextView
+            android:id="@+id/update"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikmedium"
+            android:layout_marginStart="5dp"
+            android:text="@string/update_profile"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/updateProfileBack"
+            app:layout_constraintStart_toEndOf="@+id/updateProfileBack"
+            app:layout_constraintTop_toTopOf="@+id/updateProfileBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/updateProfile"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="40dp"
+        android:visibility="visible"
+        android:src="@drawable/ic_profile_1x"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rootLayout" />
+
+    <TextView
+        android:id="@+id/updateText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="140dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/update_image"
+        android:textColor="@color/blue"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/end"
+        app:layout_constraintStart_toStartOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/rootLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/updateNameLayout"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="40dp"
+        android:background="@drawable/otp_curve"
+        app:layout_constraintEnd_toStartOf="@+id/end"
+        app:layout_constraintStart_toStartOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/updateText">
+
+
+        <Spinner
+            android:id="@+id/updateNameSpinner"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center|start"
+            android:spinnerMode="dropdown"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/updateNameView"
+            android:layout_width="1dp"
+            android:layout_height="36dp"
+            android:background="@color/liteGrey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/updateNameSpinner"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/updateNameTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/your_name"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/updateNameView"
+            app:layout_constraintTop_toTopOf="@+id/updateNameView" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/updateNameEdit"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikmedium"
+            android:background="@null"
+            android:ems="1"
+            android:maxLines="1"
+            android:hint="@string/enter_your_name"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/updateNameTextview"
+            app:layout_constraintTop_toBottomOf="@+id/updateNameTextview" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/updateNumberLayout"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/otp_curve"
+        app:layout_constraintEnd_toStartOf="@+id/end"
+        app:layout_constraintStart_toStartOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/updateNameLayout">
+
+        <com.hbb20.CountryCodePicker
+            android:id="@+id/updateCode"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            app:ccpDialog_textColor="@color/textcolor"
+            app:ccpDialog_searchEditTextTint="@color/textcolor"
+            app:ccp_contentColor="@color/textcolor"
+            app:ccp_showNameCode="false"
+            app:ccp_textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/updateNumberView"
+            android:layout_width="1dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="15dp"
+            android:background="@color/liteGrey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/updateCode"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/updateNumberTextview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/mobile_number"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/updateNumberView"
+            app:layout_constraintTop_toTopOf="@+id/updateNumberView" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/updateNumberEdittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikmedium"
+            android:background="@null"
+            android:ems="1"
+            android:inputType="number"
+            android:maxLength="10"
+            android:hint="@string/enter_your_mobile_no"
+            android:maxLines="1"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/updateNumberTextview"
+            app:layout_constraintTop_toBottomOf="@+id/updateNumberTextview" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/updateEmailLayout"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:background="@drawable/otp_curve"
+        android:layout_marginTop="12dp"
+        app:layout_constraintEnd_toStartOf="@+id/end"
+        app:layout_constraintStart_toStartOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/updateNumberLayout">
+
+        <TextView
+            android:id="@+id/updateEmailTextview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="9dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/contact_email_address"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/updateEmailEdittext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikmedium"
+            android:background="@null"
+            android:ems="1"
+            android:inputType="textEmailAddress"
+            android:maxLines="1"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            android:hint="@string/enter_your_email"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/updateEmailTextview"
+            app:layout_constraintTop_toBottomOf="@id/updateEmailTextview" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/updateProfileButton"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:layout_marginBottom="40dp"
+        android:fontFamily="@font/rubikmedium"
+        android:backgroundTint="@color/green"
+        android:text="@string/update_profile"
+        android:letterSpacing="0.04"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/end"
+        app:layout_constraintStart_toStartOf="@+id/start" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

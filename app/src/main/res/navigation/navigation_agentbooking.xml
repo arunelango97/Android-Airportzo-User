@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/agentbooking"
+    app:startDestination="@id/agentBookingFragment">
+
+    <fragment
+        android:id="@+id/agentBookingFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.AgentBookingFragment"
+        android:label="agent_booking_fragment"
+        tools:layout="@layout/agent_booking_fragment" >
+        <action
+            android:id="@+id/action_agentBookingFragment_to_bookingDetailsFragment"
+            app:destination="@id/bookingDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookingDetailsFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.BookingDetailsFragment"
+        android:label="booking_details_fragment"
+        tools:layout="@layout/booking_details_fragment" >
+        <action
+            android:id="@+id/action_navigation_booking_details_to_navigation_booking"
+            app:destination="@id/agentBookingFragment" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragments.PersonalFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rootStart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rootEnd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rootCenter"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="60dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintHeight_percent="0.1"
+        android:background="@drawable/gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/personalBack"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_back_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/rootLayout"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/rootLayout" />
+
+        <TextView
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikmedium"
+            android:layout_marginStart="5dp"
+            android:text="@string/personal_info"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/personalBack"
+            app:layout_constraintStart_toEndOf="@+id/personalBack"
+            app:layout_constraintTop_toTopOf="@+id/personalBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/updateLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/rootLayout" >
+
+        <TextView
+            android:id="@+id/updateTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:layout_marginStart="12dp"
+            android:text="@string/update_profile"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/updateImage"
+            app:layout_constraintStart_toEndOf="@+id/updateImage"
+            app:layout_constraintTop_toTopOf="@+id/updateImage" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/updateImage"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="22dp"
+            android:src="@drawable/ic_update_profile_1x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/updateNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_next_1x"
+            android:tint="@color/radioButton"
+            app:layout_constraintBottom_toBottomOf="@+id/updateTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/updateTitle" />
+
+        <View
+            android:id="@+id/updateView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/liteGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/updateTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/savedGst"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toBottomOf="@id/updateLayout">
+
+       <TextView
+           android:id="@+id/savedTitle"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/rubikregular"
+           android:layout_marginStart="12dp"
+           android:text="@string/saved_gst_numbers"
+           android:textColor="@color/textcolor"
+           android:textSize="15sp"
+           app:layout_constraintBottom_toBottomOf="@+id/savedImage"
+           app:layout_constraintStart_toEndOf="@+id/savedImage"
+           app:layout_constraintTop_toTopOf="@+id/savedImage" />
+
+       <androidx.appcompat.widget.AppCompatImageView
+           android:id="@+id/savedImage"
+           android:layout_width="28dp"
+           android:layout_height="28dp"
+           android:layout_marginStart="22dp"
+           android:layout_marginTop="22dp"
+           android:src="@drawable/ic_gst_1x"
+          app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+
+       <androidx.appcompat.widget.AppCompatImageView
+           android:id="@+id/savedNext"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginEnd="20dp"
+           android:src="@drawable/ic_next_1x"
+           android:tint="@color/radioButton"
+           app:layout_constraintBottom_toBottomOf="@+id/savedTitle"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toTopOf="@+id/savedTitle" />
+
+       <View
+           android:id="@+id/savedView"
+           android:layout_width="0dp"
+           android:layout_height="1dp"
+           android:layout_marginTop="16dp"
+           android:background="@color/liteGrey"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/savedTitle" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:id="@+id/savePassenger"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       app:layout_constraintTop_toBottomOf="@id/savedGst">
+
+       <TextView
+           android:id="@+id/savedPassengerTitle"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:fontFamily="@font/rubikregular"
+           android:layout_marginStart="12dp"
+           android:text="@string/saved_passenger_list"
+           android:textColor="@color/textcolor"
+           android:textSize="15sp"
+           app:layout_constraintBottom_toBottomOf="@+id/savedPassengerImage"
+           app:layout_constraintStart_toEndOf="@+id/savedPassengerImage"
+           app:layout_constraintTop_toTopOf="@+id/savedPassengerImage" />
+
+       <androidx.appcompat.widget.AppCompatImageView
+           android:id="@+id/savedPassengerImage"
+           android:layout_width="28dp"
+           android:layout_height="28dp"
+           android:layout_marginStart="22dp"
+           android:layout_marginTop="22dp"
+           android:src="@drawable/ic_passenger_list_1x"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent" />
+
+       <androidx.appcompat.widget.AppCompatImageView
+           android:id="@+id/savedPassengerNext"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_marginEnd="20dp"
+           android:src="@drawable/ic_next_1x"
+           android:tint="@color/radioButton"
+           app:layout_constraintBottom_toBottomOf="@+id/savedPassengerTitle"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toTopOf="@+id/savedPassengerTitle" />
+
+       <View
+           android:id="@+id/savedPassengerView"
+           android:layout_width="0dp"
+           android:layout_height="1dp"
+           android:layout_marginTop="16dp"
+           android:background="@color/liteGrey"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toBottomOf="@+id/savedPassengerTitle" />
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/saveBank"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/savePassenger">
+
+        <TextView
+            android:id="@+id/saveBankTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:layout_marginStart="12dp"
+            android:text="@string/saved_bank_account"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintBottom_toBottomOf="@+id/saveBankImage"
+            app:layout_constraintStart_toEndOf="@+id/saveBankImage"
+            app:layout_constraintTop_toTopOf="@+id/saveBankImage" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/saveBankImage"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="22dp"
+            android:layout_marginTop="22dp"
+            android:src="@drawable/bank"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/saveBankImageNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/ic_next_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/saveBankTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/saveBankTitle" />
+
+        <View
+            android:id="@+id/saveBankView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/liteGrey"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/saveBankTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

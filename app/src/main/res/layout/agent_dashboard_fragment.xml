@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.fragments.AgentDashBoardFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cCheckoutRootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/gradient"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/agentDashboardBack"
+            android:layout_width="30dp"
+            android:layout_height="?actionBarSize"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_back_1x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/checkoutBackText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:fontFamily="@font/rubikmedium"
+            android:text="@string/agent_dashboard"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/agentDashboardBack"
+            app:layout_constraintStart_toEndOf="@+id/agentDashboardBack"
+            app:layout_constraintTop_toTopOf="@+id/agentDashboardBack" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bookedLayout"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/agentbookingcurve"
+            android:backgroundTint="@color/booked"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/constraintLayout">
+
+            <TextView
+                android:id="@+id/bookedText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/total_booked"
+                android:textColor="@color/textcolor"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/bookedCount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/rubikmedium"
+                android:textColor="@color/textcolor"
+                android:textSize="28sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/bookedText"
+                app:layout_constraintTop_toBottomOf="@+id/bookedText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/mileLayout"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/agentbookingcurve"-->
+<!--            android:backgroundTint="@color/mile"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/end"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/left"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/constraintLayout">-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/mileText"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:fontFamily="@font/rubikregular"-->
+<!--                android:text="Total earned Miles"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/mileCount"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:layout_marginTop="3dp"-->
+<!--                android:fontFamily="@font/rubikmedium"-->
+<!--                android:text="5,687"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="28sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/mileText" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:id="@+id/avilableLayout"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:background="@drawable/agentbookingcurve"-->
+<!--            android:backgroundTint="@color/complete_booking"-->
+<!--            app:layout_constraintEnd_toStartOf="@+id/end"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/start"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/mileLayout">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/enChance"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="20dp"-->
+<!--                android:layout_marginEnd="20dp"-->
+<!--                android:src="@drawable/encahment"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/availableText"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:fontFamily="@font/rubikregular"-->
+<!--                android:text="Available for EnCashment"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="15sp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/enChance" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/availableCount"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="10dp"-->
+<!--                android:fontFamily="@font/rubikmedium"-->
+<!--                android:text="3,846"-->
+<!--                android:textColor="@color/black"-->
+<!--                android:textSize="28sp"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/availableText" />-->
+
+
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:id="@+id/reportProblem"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="10dp"-->
+<!--                android:layout_marginBottom="10dp"-->
+<!--                android:backgroundTint="@color/green"-->
+<!--                android:fontFamily="@font/rubikmedium"-->
+<!--                android:letterSpacing="0"-->
+<!--                android:text="Encash Miles"-->
+<!--                android:textAllCaps="false"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="16sp"-->
+<!--                android:visibility="visible"-->
+<!--                app:cornerRadius="8dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/availablecount"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/availablecount" />-->
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/mrImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_down_1x"
+            android:tint="@color/radioButton"
+            app:layout_constraintBottom_toBottomOf="@+id/citySpinner"
+            app:layout_constraintStart_toEndOf="@+id/dateText"
+            app:layout_constraintTop_toTopOf="@+id/citySpinner" />
+
+
+        <Spinner
+            android:id="@+id/citySpinner"
+            android:layout_width="113dp"
+            android:layout_height="17dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:gravity="center|start"
+            android:spinnerMode="dropdown"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/bookedLayout" />
+
+        <TextView
+            android:id="@+id/dateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/rubikmedium"
+            android:textSize="20sp"
+            android:text="July 2022"
+            android:layout_gravity="center"
+            android:gravity="center|start"
+            android:spinnerMode="dropdown"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/bookedLayout" />
+
+        <TextView
+            android:id="@+id/target"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/monthly_target"
+            android:textColor="@color/greyText"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/citySpinner" />
+
+        <TextView
+            android:id="@+id/targetMin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/rubikmedium"
+            android:text="24"
+            android:textColor="@color/textcolor"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/target" />
+
+        <TextView
+            android:id="@+id/targetMax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikmedium"
+            android:text="/40"
+            android:textColor="@color/textcolor"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/targetMin"
+            app:layout_constraintStart_toEndOf="@+id/targetMin" />
+
+        <TextView
+            android:id="@+id/targetBooking"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:fontFamily="@font/rubikmedium"
+            android:text="@string/bookings"
+            android:textColor="@color/textcolor"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/targetMax"
+            app:layout_constraintStart_toEndOf="@+id/targetMax" />
+
+        <View
+            android:id="@+id/view1"
+            android:layout_width="1dp"
+            android:layout_height="50dp"
+            android:background="@color/liteGrey"
+            app:layout_constraintBottom_toBottomOf="@+id/targetBooking"
+            app:layout_constraintEnd_toStartOf="@+id/left"
+            app:layout_constraintStart_toStartOf="@+id/left" />
+
+        <TextView
+            android:id="@+id/targetMile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/earned_miles"
+            android:textColor="@color/greyText"
+            android:textSize="16sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/target"
+            app:layout_constraintStart_toEndOf="@+id/view1" />
+
+        <TextView
+            android:id="@+id/targetMileCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/rubikmedium"
+            android:text="1,826"
+            android:textColor="@color/textcolor"
+            android:textSize="20sp"
+            app:layout_constraintStart_toStartOf="@+id/targetMile"
+            app:layout_constraintTop_toBottomOf="@+id/target" />
+
+        <View
+            android:id="@+id/cCardServiceView"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:background="@color/liteGrey"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/targetMileCount" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/agentMileRecycler"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cCardServiceView" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/topcurve">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <TextView
+        android:id="@+id/closeAccount"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/close_your_airportzo_account"
+        android:textColor="@color/black"
+        android:fontFamily="@font/rubikmedium"
+        android:textSize="17sp"
+        android:layout_marginTop="17sp"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <TextView
+        android:id="@+id/closeAccountHint"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/please_note_account_closure_is_a_permanent_action_and_once_your_account_is_closed_it_will_no_longer_be_available_to_you_and_cannot_be_restored_if_you_decide_later_that_you_want_to_start_booking_from_us_again_you_will_need_to_create_a_new_account"
+        android:fontFamily="@font/rubikregular"
+        android:textSize="14sp"
+        android:layout_marginTop="4sp"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintTop_toBottomOf="@+id/closeAccount"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/reasonLayout"
+        android:layout_width="0dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/countshape"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/closeAccountHint">
+
+        <TextView
+            android:id="@+id/addgstName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/choose_a_reason"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="15dp"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/addGstCompany"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:ems="1"
+            android:maxLines="1"
+            android:fontFamily="@font/rubikregular"
+            android:textColor="@color/black"
+            android:layout_marginTop="4dp"
+            android:layout_marginStart="15dp"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/addgstName" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/aServiceTermsLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@+id/reasonLayout">
+
+        <CheckBox
+            android:id="@+id/aServiceCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/aServiceAgree"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/yes_i_wish_to_permanently_close_my_airportzo_account_and_delete_all_my_data"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@+id/aServiceCheckbox"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/aServiceCheckbox" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/closeAccountBtn"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="66dp"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/close_my_account"
+        android:textAllCaps="false"
+        android:textColor="@color/redButton"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintEnd_toEndOf="@+id/aServiceTermsLayout"
+        app:layout_constraintStart_toStartOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/aServiceTermsLayout"
+        app:strokeColor="@color/redButton"
+        app:strokeWidth="1dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/rootLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="14dp"
+        android:layout_marginTop="5dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/liteGrey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/checkoutPassengerName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/View"
+                android:textColor="@color/textcolor"
+                android:textSize="15sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/checkoutPassengerNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="15dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/View"
+                android:textColor="@color/greyText"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkoutPassengerName" />
+
+            <View
+                android:id="@+id/checkoutView"
+                android:layout_width="1dp"
+                android:layout_height="15dp"
+                android:layout_marginStart="10dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/checkoutPassengerNo"
+                app:layout_constraintStart_toEndOf="@+id/checkoutPassengerNo"
+                app:layout_constraintTop_toTopOf="@+id/checkoutPassengerNo" />
+
+            <TextView
+                android:id="@+id/checkoutPassengerEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/View"
+                android:textSize="14sp"
+                android:textColor="@color/greyText"
+                app:layout_constraintStart_toStartOf="@+id/checkoutView"
+                app:layout_constraintBaseline_toBaselineOf="@+id/checkoutPassengerNo"/>
+
+            <TextView
+                android:id="@+id/checkoutPassengerAge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:visibility="gone"
+                android:layout_marginBottom="15dp"
+                android:layout_marginStart="20dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/View"
+                android:textSize="12sp"
+                android:textColor="@color/greyText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkoutPassengerNo" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/checkoutCancel"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic_tick_white_1x"
+                android:layout_marginEnd="20dp"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkoutPassengerName" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

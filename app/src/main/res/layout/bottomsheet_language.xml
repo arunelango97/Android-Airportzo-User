@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/topcurve">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/secondLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp"/>
+
+        <TextView
+            android:id="@+id/languageTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/rubikmedium"
+            android:text="@string/language"
+            android:textColor="@color/textcolor"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/languageDes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/change_the_language_you_use_the_airportzo_app_in"
+            android:textColor="@color/greyText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/languageTitle"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/english"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.pink"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            app:layout_constraintTop_toBottomOf="@+id/languageDes"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/English"
+            android:textAllCaps="false"
+            android:textColor="@color/textcolor"
+            android:textSize="16sp"
+            android:visibility="visible"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/tamil"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.pink"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/english"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/Tamil"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"/>
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/hindi"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton.pink"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/tamil"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/Hindi"
+            android:textAllCaps="false"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/language_button"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            android:backgroundTint="@color/green"
+            android:fontFamily="@font/rubikmedium"
+            android:layout_marginTop="30dp"
+            android:letterSpacing="0.04"
+            android:text="@string/change_language"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/hindi"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.activity.LaunchActivity">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/bannerLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.55"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/banners"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/meet_and_assist"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toTopOf="@+id/textView5"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:text="@string/book_a_comforting_welcome_service_from_assisting_the_elderly_to_receiving_a_vip"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/segmented_progressbar"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/textView7" />
+
+            <com.carlosmuvi.segmentedprogressbar.SegmentedProgressBar
+                android:id="@+id/segmented_progressbar"
+                android:layout_width="match_parent"
+                android:layout_height="3dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="30dp"
+                app:container_color="@color/grey"
+                app:fill_color="@color/white"
+                app:gap_size="4dp"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/next"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_baseline_arrow_forward_24"
+            app:fabSize="auto"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bannerLayout"
+            app:layout_constraintVertical_bias="0.59000003"
+            app:tint="@android:color/white"
+            tools:ignore="ContentDescription" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/firstLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-20dp"
+            android:background="@drawable/topcurve"
+            android:visibility="visible"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintHeight_percent="0.55"
+            app:layout_constraintTop_toBottomOf="@+id/bannerLayout"
+            tools:layout_editor_absoluteX="0dp">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textview1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rubikmedium"
+                android:gravity="center"
+                android:text="@string/choose_your_preferred_language"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/english"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.pink"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="18dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/English"
+                android:textAllCaps="false"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                app:cornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/tamil"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.pink"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/Tamil"
+                android:textAllCaps="false"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:cornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/english" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/hindi"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.pink"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/Hindi"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:cornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tamil" />
+
+
+            <!--            <androidx.appcompat.widget.AppCompatTextView-->
+            <!--                android:id="@+id/textview2"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                app:layout_constraintTop_toBottomOf="@+id/hindi"-->
+            <!--                android:layout_margin="18dp"-->
+            <!--                android:layout_marginTop="5dp"-->
+            <!--                android:drawableStart="@drawable/ic_info_1x"-->
+            <!--                android:fontFamily="@font/rubikregular"-->
+            <!--                android:gravity="center"-->
+            <!--                android:text="@string/you_can_change_the_preferred_language_anytime_within_the_app"-->
+            <!--                android:textSize="12dp" />-->
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/ic_info_1x"
+                app:layout_constraintStart_toStartOf="@+id/english"
+                app:layout_constraintTop_toBottomOf="@+id/english" />
+
+            <TextView
+                android:id="@+id/textview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/you_can_change_the_preferred_language_anytime_within_the_app"
+                android:textColor="@color/greyText"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image"
+                app:layout_constraintTop_toTopOf="@+id/image" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/secondLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/topcurve"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bannerLayout">
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/secTextView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/rubikmedium"
+                android:gravity="center"
+                android:text="@string/choose_your_preferred_currency"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/indian"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.pink"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_below="@+id/secTextView1"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="18dp"
+                android:layout_marginBottom="8dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/inr"
+                android:textAllCaps="false"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_india_1x"
+                app:iconGravity="textStart"
+                app:iconTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/secTextView1" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/usa"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton.pink"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_below="@+id/indian"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="18dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/usd"
+                android:textAllCaps="false"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:cornerRadius="8dp"
+                app:icon="@drawable/ic_usa_1x"
+                app:iconGravity="textStart"
+                app:iconTint="@null"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/indian" />
+
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="18dp"
+                android:drawableStart="@drawable/ic_back_blue_1x"
+                android:drawablePadding="4dp"
+                android:text="@string/back"
+                android:textColor="@color/blue"
+                android:visibility="visible"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/usa" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:src="@drawable/ic_info_1x"
+                app:layout_constraintStart_toStartOf="@+id/back"
+                app:layout_constraintTop_toBottomOf="@+id/back" />
+
+            <TextView
+                android:id="@+id/textview2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="15dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/you_can_change_the_preferred_currency_anytime_within_the_app"
+                android:textSize="12sp"
+                android:textColor="@color/greyText"
+                app:layout_constraintBottom_toBottomOf="@+id/image1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/image1"
+                app:layout_constraintTop_toTopOf="@+id/image1" />
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bookService"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_below="@+id/textview2"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/let_s_book_a_service"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:cornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textview2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

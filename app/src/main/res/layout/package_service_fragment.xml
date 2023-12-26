@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/aServiceRootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.45" />
+
+        <TextView
+            android:id="@+id/cServicePassenger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/passenger"
+            android:fontFamily="@font/rubikmedium"
+            android:textStyle="bold"
+            android:textColor="@color/textcolor"
+            android:textSize="17sp"
+            android:layout_marginTop="25dp"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cServiceAdult"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/adults"
+            android:fontFamily="@font/rubikregular"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cServicePassenger" />
+
+        <TextView
+            android:id="@+id/cServiceAdultRestriction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/_12_years_and_above"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/rubikregular"
+            android:textColor="@color/greyText"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cServiceAdult" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cServiceAdultCountAdd"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:background="@drawable/countshape"
+            android:src="@drawable/ic_add_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/cServiceAdultRestriction"
+            app:layout_constraintEnd_toEndOf="@id/end" />
+
+        <TextView
+            android:id="@+id/ServiceAdultCountShow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="@color/textcolor"
+            android:gravity="center"
+            android:text="@string/_1"
+            app:layout_constraintBottom_toBottomOf="@+id/cServiceAdultCountAdd"
+            app:layout_constraintEnd_toStartOf="@+id/cServiceAdultCountAdd" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cServiceAdultCountMinus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/countshape"
+            android:src="@drawable/ic_minus_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/cServiceAdultRestriction"
+            app:layout_constraintEnd_toStartOf="@+id/ServiceAdultCountShow" />
+
+        <View
+            android:id="@+id/cServiceView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/liteGrey"
+            android:layout_marginTop="13dp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cServiceAdultRestriction" />
+
+        <TextView
+            android:id="@+id/cServiceChild"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/child"
+            android:fontFamily="@font/rubikregular"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cServiceView" />
+
+        <TextView
+            android:id="@+id/cServiceChildRestriction"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="@string/_2_11_years"
+            android:fontFamily="@font/rubikregular"
+            android:textColor="@color/greyText"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cServiceChild" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cServiceChildCountAdd"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/countshape"
+            android:src="@drawable/ic_add_1x"
+            android:padding="5dp"
+            app:layout_constraintBottom_toBottomOf="@+id/cServiceChildRestriction"
+            app:layout_constraintEnd_toStartOf="@+id/end" />
+
+        <TextView
+            android:id="@+id/cServiceChildCountShow"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="5dp"
+            android:textColor="@color/textcolor"
+            android:gravity="center"
+            android:text="@string/_0"
+            app:layout_constraintBottom_toBottomOf="@+id/cServiceChildCountAdd"
+            app:layout_constraintEnd_toStartOf="@+id/cServiceChildCountAdd" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cServiceChildCountMinus"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:padding="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/countshape"
+            android:src="@drawable/ic_minus_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/cServiceChildRestriction"
+            app:layout_constraintEnd_toStartOf="@+id/cServiceChildCountShow" />
+
+        <TextView
+            android:id="@+id/cServiceNeed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="@string/when_do_you_need_the_service"
+            android:textSize="17sp"
+            android:fontFamily="@font/rubikregular"
+            android:textStyle="bold"
+            android:textColor="@color/textcolor"
+            app:layout_constraintEnd_toEndOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cServiceChildRestriction" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cServiceNeedHintImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_info_1x"
+            android:layout_marginTop="4dp"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cServiceNeed" />
+
+        <TextView
+            android:id="@+id/cServiceNeedHint"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:text="@string/the_displayed_date_and_time_are_on_the_local_timezone_of_the_airport_location"
+            android:textSize="12sp"
+            android:fontFamily="@font/rubikregular"
+            android:textColor="@color/greyText"
+            app:layout_constraintStart_toEndOf="@+id/cServiceNeedHintImg"
+            app:layout_constraintEnd_toEndOf="@+id/end"
+            app:layout_constraintTop_toTopOf="@+id/cServiceNeedHintImg" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cServiceDateLayout"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="3dp"
+            android:background="@drawable/countshape"
+            app:layout_constraintEnd_toStartOf="@+id/center"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cServiceNeedHint" >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cServiceDatePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="?actionBarSize"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_calendar_1x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/cServiceDatePickerCenterView"
+                android:layout_width="1dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="5dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cServiceDatePicker"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/cServiceDatePickerTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:text="@string/service_date"
+                android:fontFamily="@font/rubikregular"
+                android:textColor="@color/greyText"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/cServiceDatePickerCenterView"
+                app:layout_constraintTop_toTopOf="@+id/cServiceDatePickerCenterView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cServiceDatePickerEditText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:ems="1"
+                android:maxLines="1"
+                android:textColor="@color/textcolor"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/cServiceDatePickerTextView"
+                app:layout_constraintTop_toBottomOf="@+id/cServiceDatePickerTextView" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cServiceTimeLayout"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginStart="3dp"
+            android:background="@drawable/countshape"
+            app:layout_constraintBottom_toBottomOf="@+id/cServiceDateLayout"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/center"
+            app:layout_constraintTop_toTopOf="@+id/cServiceDateLayout" >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/cServiceTimePicker"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_time_1x"
+                android:layout_marginStart="12dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/cServiceTimeCenterView"
+                android:layout_width="1dp"
+                android:layout_height="36dp"
+                android:background="@color/liteGrey"
+                android:layout_marginStart="5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cServiceTimePicker"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/cServiceTimeTextview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/flight_time"
+                android:textColor="@color/greyText"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cServiceTimeCenterView"
+                app:layout_constraintTop_toTopOf="@+id/cServiceTimeCenterView" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cServiceTimeEdittext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:background="@null"
+                android:textColor="@color/textcolor"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cServiceTimeCenterView"
+                app:layout_constraintTop_toBottomOf="@+id/cServiceTimeTextview" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/gmt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:ems="1"
+                android:visibility="gone"
+                android:maxLines="1"
+                android:text=""
+                android:textColor="@color/textcolor"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/cServiceTimeEdittext"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cServiceTimeEdittext"
+                app:layout_constraintTop_toTopOf="@+id/cServiceTimeEdittext" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/cServicePackages"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="@string/packages"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/rubikregular"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cServiceDateLayout" />
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cServicePackagesRecyclerview"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:overScrollMode="never"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cServicePackages" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cancelLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/policy_background"
+            app:layout_constraintEnd_toEndOf="@+id/end"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cServicePackagesRecyclerview">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/aJourney1left"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="10dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/aJourney1right"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="10dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/aJourney1center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.55" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/aJourney1top"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="10dp" />
+
+            <TextView
+                android:id="@+id/cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/cancellation_policy"
+                android:textColor="@color/dark_grey"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/ic_info_1x"
+                app:layout_constraintStart_toStartOf="@+id/aJourney1left"
+                app:layout_constraintTop_toTopOf="@+id/aJourney1top" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/cancelRecycler"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:overScrollMode="never"
+                android:visibility="visible"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toStartOf="@+id/aJourney1right"
+                app:layout_constraintStart_toStartOf="@+id/aJourney1left"
+                app:layout_constraintTop_toBottomOf="@+id/cancel" />
+
+
+            <TextView
+                android:id="@+id/reschedule"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/reschedule_policy"
+                android:textColor="@color/dark_grey"
+                android:textSize="12sp"
+                app:drawableStartCompat="@drawable/ic_info_1x"
+                app:layout_constraintStart_toStartOf="@+id/aJourney1left"
+                app:layout_constraintTop_toBottomOf="@+id/cancelRecycler" />
+
+            <TextView
+                android:id="@+id/rescheduleText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="3dp"
+                android:layout_marginBottom="20dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/line"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/aJourney1right"
+                app:layout_constraintStart_toStartOf="@+id/aJourney1left"
+                app:layout_constraintTop_toBottomOf="@+id/reschedule" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <CheckBox
+            android:id="@+id/termsCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@color/green"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/cancelLayout" />
+
+        <TextView
+            android:id="@+id/termsTextView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/str_terms_and_privacy"
+            android:textColor="@color/textcolor"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toEndOf="@+id/termsCheckbox"
+            app:layout_constraintTop_toBottomOf="@+id/cancelLayout" />
+
+
+        <LinearLayout
+            android:id="@+id/bottomButtonLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/termsTextView">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addToCart"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="@color/green"
+                android:elevation="0dp"
+                android:imeOptions="actionDone"
+                android:text="@string/add_to_cart"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:cornerRadius="8dp"
+                app:elevation="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/removeFromCart"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="@color/green"
+                android:elevation="0dp"
+                android:imeOptions="actionDone"
+                android:text="@string/remove_from_cart"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:cornerRadius="8dp"
+                app:elevation="0dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/checkout"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="18dp"
+                android:elevation="0dp"
+                android:imeOptions="actionDone"
+                android:text="@string/checkout"
+                android:textAllCaps="false"
+                android:textColor="#C65662"
+                android:textSize="16sp"
+                android:visibility="gone"
+                app:cornerRadius="8dp"
+                app:elevation="0dp"
+                app:strokeColor="#C65662" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/nextStation"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_width="match_parent"
+                android:layout_height="66dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="18dp"
+                android:backgroundTint="@color/green"
+                android:elevation="0dp"
+                android:imeOptions="actionDone"
+                android:text="@string/go_to_next_station"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                app:cornerRadius="8dp"
+                app:elevation="0dp" />
+
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

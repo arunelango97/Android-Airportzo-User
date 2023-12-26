@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:background="@drawable/fullcurve"
+        android:layout_height="match_parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            android:text="@string/let_us_know_how_we_are_doing"
+            android:gravity="center_horizontal"
+            android:textSize="20sp"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/rubikmedium"/>
+
+        <View
+            android:id="@+id/viewLine"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/header"
+            android:background="@color/liteGrey" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/packageImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/viewLine"
+            android:layout_marginTop="20dp" />
+
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cServiceImage"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
+            android:innerRadius="0dp"
+            android:shape="ring"
+            app:cardBackgroundColor="@android:color/transparent"
+            app:cardCornerRadius="50dp"
+            app:layout_constraintStart_toStartOf="@+id/viewLine"
+            app:layout_constraintTop_toBottomOf="@+id/viewLine">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/userImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitXY"
+                android:src="@drawable/mapbgcopy" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/userName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:gravity="center_horizontal"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/rubikmedium"
+            app:layout_constraintStart_toEndOf="@+id/cServiceImage"
+            app:layout_constraintTop_toTopOf="@+id/cServiceImage" />
+
+
+        <RatingBar
+            android:id="@+id/rating"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="3dp"
+            android:numStars="5"
+            android:isIndicator="true"
+            android:progressBackgroundTint="#D0D0D0"
+            android:progressTint="@color/review_background"
+            android:stepSize="1"
+            app:layout_constraintBottom_toBottomOf="@+id/cServiceImage"
+            app:layout_constraintStart_toStartOf="@+id/userName"
+            app:layout_constraintTop_toBottomOf="@+id/userName" />
+
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/reviewHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/rating"
+            android:text="@string/comment"
+            android:layout_marginStart="20dp"
+            android:textColor="@color/textcolor"
+            android:fontFamily="@font/rubikmedium"
+            android:textSize="20sp"
+            android:layout_marginTop="18dp" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/reviewEdit"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="10dp"
+            android:gravity="start"
+            android:textColor="@color/textcolor"
+            app:layout_constraintTop_toBottomOf="@+id/reviewHeader"
+            android:background="@drawable/otp_curve"
+            android:layout_marginStart="20dp"
+            android:visibility="visible"
+            android:textColorHint="@color/greyText"
+            android:hint="@string/your_message"
+            android:fontFamily="@font/rubikmedium"
+            android:padding="10dp"
+            android:layout_marginEnd="20dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/submit"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="40dp"
+            android:layout_marginEnd="18dp"
+            android:backgroundTint="@color/green"
+            android:text="@string/submit"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="visible"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reviewEdit" />
+
+        <TextView
+            android:id="@+id/commentContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/rubikmedium"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/reviewHeader"
+            app:layout_constraintTop_toBottomOf="@+id/reviewHeader" />
+
+        <TextView
+            android:id="@+id/commentTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubikregular"
+            android:textSize="12sp"
+            android:textColor="@color/textcolor"
+            android:visibility="gone"
+            android:paddingBottom="20dp"
+            app:layout_constraintStart_toStartOf="@+id/commentContent"
+            app:layout_constraintTop_toBottomOf="@+id/commentContent" />
+
+        <ImageButton
+            android:id="@+id/closeButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="5dp"
+            app:layout_constraintEnd_toEndOf="@+id/header"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/close" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

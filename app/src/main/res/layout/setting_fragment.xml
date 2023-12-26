@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.fragments.SettingFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--<androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rootstart"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="24dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rootend"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/rootcenter"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="60dp" />-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rootlayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/gradient"
+            app:layout_constrainedHeight="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_percent="0.1"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/settingback"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_back_1x"
+                app:layout_constraintBottom_toBottomOf="@+id/rootlayout"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/rootlayout" />
+
+            <TextView
+                android:id="@+id/settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/settings"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/settingback"
+                app:layout_constraintStart_toEndOf="@+id/settingback"
+                app:layout_constraintTop_toTopOf="@+id/settingback" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/securityLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rootlayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/securityimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_security_1x"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/securitytitle"
+                app:layout_constraintBottom_toBottomOf="@id/securitydes"/>
+
+            <TextView
+                android:id="@+id/securitytitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/security"
+                android:textColor="@color/textcolor"
+                android:textSize="15sp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintStart_toEndOf="@id/securityimage"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/securitydes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/secure_your_account_using_face_id_or_fingerprint"
+                android:textSize="12sp"
+                android:textColor="@color/greyText"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="@id/securitytitle"
+                app:layout_constraintTop_toBottomOf="@id/securitytitle"
+                app:layout_constraintEnd_toStartOf="@id/securitynext"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/securitynext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_next_1x"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/securitytitle"
+                app:layout_constraintBottom_toBottomOf="@id/securitydes"/>
+
+            <View
+                android:id="@+id/securityview"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/securitydes"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/languageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/securityLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/languageimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_language_1x"
+                app:layout_constraintBottom_toBottomOf="@id/languagedes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/languagetitle"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/languagetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/language"
+                android:textColor="@color/textcolor"
+                android:textSize="15sp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintStart_toEndOf="@id/languageimage"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/languagedes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/change_the_language_you_use_the_airportzo_app_in"
+                android:textSize="12sp"
+                android:textColor="@color/greyText"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="@id/languagetitle"
+                app:layout_constraintTop_toBottomOf="@id/languagetitle"
+                app:layout_constraintEnd_toStartOf="@id/languagenext"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/languagenext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_next_1x"
+                app:layout_constraintBottom_toBottomOf="@id/languagedes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/languagetitle"
+                app:layout_constraintVertical_bias="0.571" />
+
+            <View
+                android:id="@+id/languageview"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/languagedes"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/currencyLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/languageLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/currencyimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_currency_1x"
+                app:layout_constraintBottom_toBottomOf="@id/currencydes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/currencytitle"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/currencytitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/currency"
+                android:textColor="@color/textcolor"
+                android:textSize="15sp"
+                android:layout_marginTop="25dp"
+                android:layout_marginStart="15dp"
+                app:layout_constraintStart_toEndOf="@id/currencyimage"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/currencydes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/change_the_currency_you_want_to_transact_with"
+                android:textSize="12sp"
+                android:textColor="@color/greyText"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="@id/currencytitle"
+                app:layout_constraintTop_toBottomOf="@id/currencytitle"
+                app:layout_constraintEnd_toStartOf="@id/currencynext"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/currencynext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_next_1x"
+                app:layout_constraintBottom_toBottomOf="@id/currencydes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/currencytitle"
+                app:layout_constraintVertical_bias="0.571" />
+
+            <View
+                android:id="@+id/currencyview"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/currencydes"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/accountLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/currencyLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/manageimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_manage_1x"
+                app:layout_constraintBottom_toBottomOf="@id/managedes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/managetitle"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/managetitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/manage_accounts_on_all_devices"
+                android:textColor="@color/textcolor"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/manageimage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/managedes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/view_and_logout_from_all_or_specific_airportzo_account"
+                android:textSize="12sp"
+                android:textColor="@color/greyText"
+                app:layout_constraintStart_toStartOf="@id/managetitle"
+                app:layout_constraintTop_toBottomOf="@id/managetitle"
+                app:layout_constraintEnd_toStartOf="@id/managenext"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/managenext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_next_1x"
+                app:layout_constraintBottom_toBottomOf="@id/managedes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/managetitle"
+                app:layout_constraintVertical_bias="0.571" />
+
+            <View
+                android:id="@+id/manageview"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/managedes"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/aboutLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/accountLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aboutimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_about_1x"
+                app:layout_constraintBottom_toBottomOf="@id/aboutdes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/abouttitle"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/abouttitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/about"
+                android:textColor="@color/textcolor"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/aboutimage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/aboutdes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/know_more_about_airportzo"
+                android:textSize="12sp"
+                android:textColor="@color/greyText"
+                app:layout_constraintStart_toStartOf="@id/abouttitle"
+                app:layout_constraintTop_toBottomOf="@id/abouttitle"
+                app:layout_constraintEnd_toStartOf="@id/aboutnext"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aboutnext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_next_1x"
+                app:layout_constraintBottom_toBottomOf="@id/aboutdes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/abouttitle"
+                app:layout_constraintVertical_bias="0.571" />
+
+            <View
+                android:id="@+id/aboutview"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/aboutdes"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/closeAccountLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/aboutLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/accountimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_close_account_1x"
+                app:layout_constraintBottom_toBottomOf="@id/accountdes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/accounttitle"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/accounttitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/close_your_airportzo_account"
+                android:textColor="@color/textcolor"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/accountimage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/accountdes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/permanently_close_your_airportzo_account_and_delete_all_your_data"
+                android:textSize="12sp"
+                android:textColor="@color/greyText"
+                app:layout_constraintStart_toStartOf="@id/accounttitle"
+                app:layout_constraintTop_toBottomOf="@id/accounttitle"
+                app:layout_constraintEnd_toStartOf="@id/accountnext"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/accountnext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_next_1x"
+                app:layout_constraintBottom_toBottomOf="@id/accountdes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/accounttitle" />
+
+            <View
+                android:id="@+id/accountview"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/accountdes"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/policyLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/closeAccountLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/policyimage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_policies_1x"
+                app:layout_constraintBottom_toBottomOf="@id/policydes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/policytitle"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/policytitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/policies"
+                android:textColor="@color/textcolor"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@id/policyimage"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/policydes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/terms_and_conditions_privacy_policy_and_cancellation_policy"
+                android:textSize="12sp"
+                android:textColor="@color/greyText"
+                app:layout_constraintStart_toStartOf="@id/policytitle"
+                app:layout_constraintTop_toBottomOf="@id/policytitle"
+                app:layout_constraintEnd_toStartOf="@id/policynext"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/policynext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/ic_next_1x"
+                app:layout_constraintBottom_toBottomOf="@id/policydes"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/policytitle" />
+
+           <!-- <View
+                android:id="@+id/policyview"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/policydes"/>-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:id="@+id/logoutLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/policyLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_logout_1x"
+                android:tint="@color/textcolor" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/appCompatTextViewLogut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/logout"
+                android:textColor="@color/grey"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

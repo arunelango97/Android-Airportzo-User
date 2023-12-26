@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cart"
+    app:startDestination="@id/navigation_cart">
+
+
+    <fragment
+        android:id="@+id/navigation_cart"
+        android:name="com.travel.airportzo.user.ui.fragments.CartFragment"
+        android:label="Cart"
+        tools:layout="@layout/cart_fragment" >
+
+        <action
+            android:id="@+id/action_cart_to_SummaryFragment"
+            app:destination="@id/navigation_summary"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_summary"
+        android:name="com.travel.airportzo.user.ui.fragments.SummaryFragment"
+        android:label="Cart"
+        tools:layout="@layout/summary_fragment" >
+
+        <action
+            android:id="@+id/action_cart_to_CheckoutFragment"
+            app:destination="@+id/navigation_checkout"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_checkout"
+        android:name="com.travel.airportzo.user.ui.fragments.CheckoutFragment"
+        android:label="Cart"
+        tools:layout="@layout/checkout_fragment" >
+        <action
+            android:id="@+id/action_navigation_checkout_to_cartPoliciesFragment"
+            app:destination="@id/cartPoliciesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/cartPoliciesFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.PoliciesFragment"
+        android:label="policies_fragment"
+        tools:layout="@layout/policies_fragment" >
+        <action
+            android:id="@+id/action_cartPoliciesFragment_to_navigation_checkout"
+            app:destination="@id/navigation_checkout" />
+    </fragment>
+
+</navigation>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_menu"
+    app:startDestination="@id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_booking_details"
+        android:name="com.travel.airportzo.user.ui.fragments.BookingDetailsFragment"
+        android:label="Cart"
+        tools:layout="@layout/booking_details_fragment">
+        <action
+            android:id="@+id/action_navigation_booking_details_to_navigation_booking"
+            app:destination="@id/navigation_booking" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.travel.airportzo.user.ui.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/home_fragment">
+
+        <action
+            android:id="@+id/action_home_to_ChooseServiceFragment"
+            app:destination="@id/navigation_chooseservice" />
+
+        <action
+            android:id="@+id/action_home_to_ServiceFragment"
+            app:destination="@id/navigation_service" />
+
+        <action
+            android:id="@+id/action_home_to_ProfileFragment"
+            app:destination="@+id/navigation_profile" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_booking_details"
+            app:destination="@id/navigation_booking_details" />
+
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_service"
+        android:name="com.travel.airportzo.user.ui.fragments.ServiceFragment"
+        android:label="Cart"
+        tools:layout="@layout/service_fragment">
+
+        <action
+            android:id="@+id/action_home_to_ChooseServiceFragment"
+            app:destination="@id/navigation_chooseservice" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_chooseservice"
+        android:name="com.travel.airportzo.user.ui.fragments.ChooseServiceFragment"
+        android:label="@string/choose_service"
+        tools:layout="@layout/choose_service_fragment" />
+
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.travel.airportzo.user.ui.fragments.ProfileFragment"
+        android:label="profile"
+        tools:layout="@layout/profile_fragment">
+
+        <action
+            android:id="@+id/action_home_to_Settingfragment"
+            app:destination="@+id/navigation_setting" />
+        <action
+            android:id="@+id/action_navigation_profile_to_personalFragment"
+            app:destination="@id/personalFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_becomeAnAgentFragment"
+            app:destination="@id/becomeAnAgentFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_agentDashBoardFragment"
+            app:destination="@id/agentDashBoardFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_helpFragment"
+            app:destination="@id/helpFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_setting"
+        android:name="com.travel.airportzo.user.ui.fragments.SettingFragment"
+        android:label="setting"
+        tools:layout="@layout/setting_fragment">
+        <action
+            android:id="@+id/action_navigation_setting_to_policiesFragment"
+            app:destination="@id/policiesFragment" />
+        <action
+            android:id="@+id/action_navigation_setting_to_navigation_home"
+            app:destination="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_setting_to_aboutFragment"
+            app:destination="@id/aboutFragment" />
+        <action
+            android:id="@+id/action_navigation_setting_to_manageAccountFragment"
+            app:destination="@id/manageAccountFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/personalFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.PersonalFragment"
+        android:label="personal_fragment"
+        tools:layout="@layout/personal_fragment">
+        <action
+            android:id="@+id/action_personalFragment_to_updateProfileFragment"
+            app:destination="@id/updateProfileFragment" />
+        <action
+            android:id="@+id/action_personalFragment_to_savedGstFragment"
+            app:destination="@id/savedGstFragment" />
+        <action
+            android:id="@+id/action_personalFragment_to_savedPassengerFragment"
+            app:destination="@id/savedPassengerFragment" />
+        <action
+            android:id="@+id/action_personalFragment_to_savedBankFragment"
+            app:destination="@id/savedBankFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateProfileFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.UpdateProfileFragment"
+        android:label="update_profile_fragment"
+        tools:layout="@layout/update_profile_fragment">
+
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/savedGstFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.SavedGstFragment"
+        android:label="saved_gst_fragment"
+        tools:layout="@layout/saved_gst_fragment" />
+    <fragment
+        android:id="@+id/savedPassengerFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.SavedPassengerFragment"
+        android:label="saved_passenger_fragment"
+        tools:layout="@layout/saved_passenger_fragment" />
+    <fragment
+        android:id="@+id/policiesFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.PoliciesFragment"
+        android:label="policies_fragment"
+        tools:layout="@layout/policies_fragment" />
+    <fragment
+        android:id="@+id/becomeAnAgentFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.BecomeAnAgentFragment"
+        android:label="become_an_agent_fragment"
+        tools:layout="@layout/become_an_agent_fragment">
+
+        <action
+            android:id="@+id/action_becomeAnAgentFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedBankFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.SavedBankFragment"
+        android:label="saved_bank_fragment"
+        tools:layout="@layout/saved_bank_fragment" />
+    <fragment
+        android:id="@+id/agentDashBoardFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.AgentDashBoardFragment"
+        android:label="agent_dashboard_fragment"
+        tools:layout="@layout/agent_dashboard_fragment" />
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.HelpFragment"
+        android:label="HelpFragment"
+        tools:layout="@layout/help_fragment" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.AboutFragment"
+        android:label="about_fragment"
+        tools:layout="@layout/about_fragment" />
+    <fragment
+        android:id="@+id/manageAccountFragment"
+        android:name="com.travel.airportzo.user.ui.fragments.ManageAccountFragment"
+        android:label="manage_account_fragment"
+        tools:layout="@layout/manage_account_fragment" />
+
+
+</navigation>

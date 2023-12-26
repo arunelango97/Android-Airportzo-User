@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/logincurve"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="12dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cCardImage"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:src="@drawable/mapbgcopy"
+        app:layout_constraintStart_toStartOf="@+id/guide"
+        app:layout_constraintTop_toTopOf="@+id/guide2" />
+
+    <TextView
+        android:id="@+id/cCardName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/rubikmedium"
+        android:text="@string/View"
+        android:textColor="@color/textcolor"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/cCardImage"
+        app:layout_constraintTop_toTopOf="@+id/cCardImage" />
+
+    <TextView
+        android:id="@+id/cCardServiceName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/View"
+        android:textColor="@color/greyText"
+        android:layout_marginStart="14dp"
+        app:layout_constraintBottom_toBottomOf="@+id/cCardImage"
+        app:layout_constraintStart_toEndOf="@+id/cCardImage" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="1dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="10dp"
+        android:background="@color/liteGrey"
+        app:layout_constraintBottom_toBottomOf="@+id/cCardServiceName"
+        app:layout_constraintStart_toEndOf="@+id/cCardServiceName"
+        app:layout_constraintTop_toTopOf="@+id/cCardServiceName" />
+
+    <TextView
+        android:id="@+id/cCardServiceTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/View"
+        android:textColor="@color/greyText"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toStartOf="@+id/guide1"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/cCardServiceName" />
+
+    <!--<androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cCardCloseImg"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:src="@drawable/ic_close_1x"
+        app:layout_constraintTop_toTopOf="@id/guide2"
+        app:layout_constraintEnd_toEndOf="@id/guide1"/>-->
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cCardEditImg"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:visibility="gone"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_edit_1x"
+        app:layout_constraintTop_toTopOf="@id/guide2"
+        app:layout_constraintEnd_toStartOf="@id/guide1"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cServiceRecyclerView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="@id/guide1"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@id/guide"
+        app:layout_constraintTop_toBottomOf="@+id/cCardServiceTime" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

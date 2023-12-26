@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/topcurve">
+
+<androidx.constraintlayout.widget.Guideline
+    android:id="@+id/start"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_constraintGuide_begin="16dp" />
+
+<androidx.constraintlayout.widget.Guideline
+android:id="@+id/end"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical"
+app:layout_constraintGuide_end="16dp" />
+
+<TextView
+android:id="@+id/addNew"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:text="@string/add_new_bank"
+    android:gravity="center"
+android:textColor="@color/black"
+android:fontFamily="@font/rubikmedium"
+android:textSize="20sp"
+android:layout_marginTop="17sp"
+app:layout_constraintStart_toStartOf="@id/start"
+app:layout_constraintEnd_toEndOf="@id/end"
+app:layout_constraintTop_toTopOf="parent"/>
+
+    <View
+        android:id="@+id/bankView"
+        android:layout_width="0dp"
+        android:layout_height="1.5dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/liteGrey"
+        app:layout_constraintTop_toBottomOf="@+id/addNew"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintEnd_toEndOf="@id/end"/>
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:id="@+id/accountNoLayout"
+android:layout_width="0dp"
+android:layout_height="60dp"
+android:layout_marginTop="20dp"
+android:background="@drawable/countshape"
+app:layout_constraintEnd_toEndOf="@id/end"
+app:layout_constraintStart_toStartOf="@+id/start"
+app:layout_constraintTop_toBottomOf="@+id/bankView">
+
+<TextView
+    android:id="@+id/accountName"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/rubikregular"
+    android:text="@string/account_number"
+    android:layout_marginTop="9dp"
+    android:layout_marginStart="15dp"
+    android:textSize="12sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<androidx.appcompat.widget.AppCompatEditText
+    android:id="@+id/accountNo"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:ems="1"
+    android:maxLines="1"
+    android:inputType="number"
+    android:fontFamily="@font/rubikmedium"
+    android:textColor="@color/textcolor"
+    android:layout_marginTop="4dp"
+    android:layout_marginStart="15dp"
+    android:textSize="15sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/accountName" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+android:id="@+id/accountReLayout"
+android:layout_width="0dp"
+android:layout_height="60dp"
+android:layout_marginTop="16dp"
+android:background="@drawable/countshape"
+app:layout_constraintEnd_toEndOf="@id/end"
+app:layout_constraintStart_toStartOf="@+id/start"
+app:layout_constraintTop_toBottomOf="@+id/accountNoLayout">
+
+<TextView
+    android:id="@+id/accountReName"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/rubikregular"
+    android:text="@string/re_enter_account_number"
+    android:layout_marginTop="9dp"
+    android:layout_marginStart="15dp"
+    android:textSize="12sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+<androidx.appcompat.widget.AppCompatEditText
+    android:id="@+id/accountReNo"
+    android:layout_width="0dp"
+    android:layout_height="wrap_content"
+    android:background="@null"
+    android:ems="1"
+    android:maxLines="1"
+    android:inputType="number"
+    android:fontFamily="@font/rubikmedium"
+    android:textColor="@color/textcolor"
+    android:layout_marginTop="4dp"
+    android:layout_marginStart="15dp"
+    android:textSize="15sp"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/accountReName" />
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/accountIfscLayout"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/countshape"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/accountReLayout">
+
+        <TextView
+            android:id="@+id/accountIfsc"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/ifsc_code"
+            android:layout_marginTop="9dp"
+            android:layout_marginStart="15dp"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/ifscEdittext"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:background="@null"
+            android:fontFamily="@font/rubikmedium"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/accountIfsc"
+            app:layout_constraintTop_toBottomOf="@+id/accountIfsc"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/ifscText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/rubikregular"
+        android:textColor="@color/grey"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/start"
+        app:layout_constraintTop_toBottomOf="@+id/accountIfscLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/aServiceTermsLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@+id/ifscText">
+
+        <CheckBox
+            android:id="@+id/aServiceCheckbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/aServiceAgree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/make_this_as_primary_bank_for_all_payments"
+            android:textColor="@color/grey"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/aServiceCheckbox"
+            app:layout_constraintStart_toEndOf="@+id/aServiceCheckbox"
+            app:layout_constraintTop_toTopOf="@+id/aServiceCheckbox" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/addSaveBank"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="40dp"
+        android:backgroundTint="@color/green"
+        android:fontFamily="@font/rubikmedium"
+        android:letterSpacing="0"
+        android:text="@string/add_new_bank"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:cornerRadius="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@+id/aServiceTermsLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

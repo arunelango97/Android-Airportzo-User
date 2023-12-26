@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/summaryPackageAdapterLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <View
+        android:id="@+id/summaryPackageView"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/liteGrey"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cCardPackageName"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:maxLines="2"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/View"
+        android:textColor="@color/textcolor"
+        android:textSize="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/summaryPackageView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/packageCardCloseImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close_1x"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cCardAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:fontFamily="@font/rubikmedium"
+        android:text="@string/View"
+        android:textColor="@color/textcolor"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/cCardPersonCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubikregular"
+        android:layout_marginTop="5dp"
+        android:text="@string/View"
+        android:textColor="@color/greyText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cCardPackageName" />
+
+    <TextView
+        android:id="@+id/cCardPersonAdult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/adults"
+        android:textSize="14sp"
+        android:textColor="@color/greyText"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cCardPersonCount"
+        app:layout_constraintStart_toEndOf="@+id/cCardPersonCount" />
+
+    <TextView
+        android:id="@+id/childCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubikregular"
+        android:layout_marginStart="3dp"
+        android:text="@string/View"
+        android:textColor="@color/greyText"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cCardPersonAdult"
+        app:layout_constraintStart_toEndOf="@+id/cCardPersonAdult" />
+
+    <TextView
+        android:id="@+id/child"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/child"
+        android:textSize="14sp"
+        android:textColor="@color/greyText"
+        app:layout_constraintBaseline_toBaselineOf="@+id/childCount"
+        app:layout_constraintStart_toEndOf="@+id/childCount" />
+
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="1dp"
+        android:layout_height="20dp"
+        android:background="@color/liteGrey"
+        android:layout_marginStart="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/cCardPersonAdult"
+        app:layout_constraintStart_toEndOf="@id/child"
+        app:layout_constraintTop_toTopOf="@+id/cCardPersonAdult" />
+
+    <TextView
+        android:id="@+id/cCardEarn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubikregular"
+        android:layout_marginStart="7dp"
+        android:text="@string/earn"
+        android:visibility="invisible"
+        app:drawableStartCompat="@drawable/ic_coin_1x"
+        app:layout_constraintBaseline_toBaselineOf="@+id/cCardPersonAdult"
+        app:layout_constraintStart_toEndOf="@+id/view1" />
+
+    <TextView
+        android:id="@+id/cCardMilesCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:fontFamily="@font/rubikregular"
+        android:textStyle="bold"
+        android:visibility="invisible"
+        android:text="10"
+        app:layout_constraintBottom_toBottomOf="@+id/cCardEarn"
+        app:layout_constraintStart_toEndOf="@id/cCardEarn"
+        app:layout_constraintTop_toTopOf="@+id/cCardEarn" />
+
+    <TextView
+        android:id="@+id/cCardMiles"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:fontFamily="@font/rubikregular"
+        android:textStyle="bold"
+        android:text="@string/miles"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/cCardMilesCount"
+        app:layout_constraintStart_toEndOf="@id/cCardMilesCount"
+        app:layout_constraintTop_toTopOf="@+id/cCardMilesCount" />
+
+    <TextView
+        android:id="@+id/addNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/rubikmedium"
+        android:text="@string/add_notes"
+        android:textColor="@color/blue"
+        android:textSize="14sp"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cCardPersonCount" />
+
+    <TextView
+        android:id="@+id/editNotes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/rubikmedium"
+        android:text="@string/edit_notes"
+        android:textColor="@color/blue"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cCardPersonCount" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

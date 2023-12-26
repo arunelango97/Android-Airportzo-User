@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.AgentBookingFragment">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rootStart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="24dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rootEnd"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="0dp"
+        android:layout_height="70dp"
+        android:background="@drawable/gradient"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+<!--        <ImageView-->
+<!--            android:id="@+id/agentBooking"-->
+<!--            android:layout_width="30dp"-->
+<!--            android:layout_height="30dp"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:src="@drawable/ic_back_1x"-->
+<!--            app:layout_constraintBottom_toBottomOf="@+id/rootLayout"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="@+id/rootLayout" />-->
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="0dp"
+            android:layout_height="70dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.SearchView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/searchView"
+                android:background="@drawable/search"
+                android:focusable="false"
+                app:iconifiedByDefault="false"
+                android:focusableInTouchMode="true"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:searchIcon="@drawable/ic_search_1x"
+                app:queryBackground="@android:color/transparent"
+                app:queryHint="search bookings"
+                tools:ignore="RtlSymmetry" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/bookingTab"
+        android:layout_width="0dp"
+        android:layout_height="34dp"
+        app:layout_constraintEnd_toStartOf="@+id/rootEnd"
+        app:layout_constraintStart_toStartOf="@+id/rootStart"
+        app:layout_constraintTop_toBottomOf="@+id/rootLayout"
+        app:tabIndicatorColor="@color/blue"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextAppearance="@style/TabLayoutTextFont">
+
+    </com.google.android.material.tabs.TabLayout>
+    <View
+        android:id="@+id/cServiceView"
+        android:layout_width="0dp"
+        android:layout_height="1.5dp"
+        android:background="@color/liteGrey"
+        app:layout_constraintTop_toBottomOf="@+id/bookingTab"
+        app:layout_constraintStart_toStartOf="@id/rootStart"
+        app:layout_constraintEnd_toEndOf="@id/rootEnd"/>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/myViewPager"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cServiceView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+

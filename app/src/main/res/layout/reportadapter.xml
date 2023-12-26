@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="imagePath"
+            type="String" />
+
+        <variable
+            name="viewHolder"
+            type="com.travel.airportzo.user.ui.adapter.ReportAdapter.ReportViewHolder" />
+    </data>
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="140dp"
+        android:id="@+id/top"
+        android:layout_margin="4dp"
+        android:layout_height="140dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/liteGrey"
+        app:cardCornerRadius="14dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="140dp"
+            android:layout_height="140dp">
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageUploadView"
+                loadImageUri="@{imagePath}"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="@{() -> viewHolder.onItemRemoved(imagePath)}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

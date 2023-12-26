@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/topcurve">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <TextView
+            android:id="@+id/cancelText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/rubikmedium"
+            android:gravity="center"
+            android:text="@string/are_you_sure_to_cancel_the_booking"
+            android:textColor="@color/textcolor"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@+id/start1"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/cancelTime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubikregular"
+            android:textColor="@color/textcolor"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/start1"
+            app:layout_constraintTop_toBottomOf="@+id/cancelText" />
+
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.65" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.35" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/cancelPackageImage"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/mapbgcopy"
+            app:layout_constraintStart_toStartOf="@+id/start1"
+            app:layout_constraintTop_toBottomOf="@+id/cancelTime" />
+
+        <TextView
+            android:id="@+id/cCardName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/rubikmedium"
+            android:text="@string/View"
+            android:textColor="@color/textcolor"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/cancelPackageImage"
+            app:layout_constraintTop_toTopOf="@+id/cancelPackageImage" />
+
+        <TextView
+            android:id="@+id/cancelServiceName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/View"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/cancelPackageImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/cancelPackageImage" />
+
+        <TextView
+            android:id="@+id/cancelServiceAvailable"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/service_avail_time"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/center"
+            app:layout_constraintStart_toStartOf="@+id/start1"
+            app:layout_constraintTop_toBottomOf="@+id/cancelPackageImage" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/center"
+            app:layout_constraintStart_toStartOf="@+id/start1"
+            app:layout_constraintTop_toBottomOf="@+id/cancelServiceAvailable" />
+
+        <TextView
+            android:id="@+id/cancelServiceCost"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/service_cost"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/cancelServiceAvailable"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/center" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rsTwo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rupee_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/cancelServiceCostAmount"
+            app:layout_constraintStart_toStartOf="@+id/center" />
+
+        <TextView
+            android:id="@+id/cancelServiceCostAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/textView2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rsTwo" />
+
+        <TextView
+            android:id="@+id/cancelBefore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/cancel_before"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/start"
+            app:layout_constraintStart_toStartOf="@+id/start1"
+            app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        <TextView
+            android:id="@+id/cancelBeforeHour"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/rubikregular"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/start"
+            app:layout_constraintStart_toStartOf="@+id/start1"
+            app:layout_constraintTop_toBottomOf="@+id/cancelBefore" />
+
+        <TextView
+            android:id="@+id/cancelFees"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/cancellation_fee"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/cancelBefore"
+            app:layout_constraintEnd_toStartOf="@+id/center"
+            app:layout_constraintStart_toStartOf="@+id/start" />
+
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rsOne"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rupee_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/cancelFeeAmount"
+            app:layout_constraintStart_toStartOf="@+id/start" />
+
+        <TextView
+            android:id="@+id/cancelFeeAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/cancelBeforeHour"
+            app:layout_constraintEnd_toStartOf="@+id/center"
+            app:layout_constraintStart_toEndOf="@+id/rsOne" />
+
+        <TextView
+            android:id="@+id/cancelRefund"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/refund_amount"
+            android:textSize="12sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/cancelFees"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/center" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/rsThree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_rupee_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/cancelRefundAmount"
+            app:layout_constraintStart_toStartOf="@+id/center" />
+
+        <TextView
+            android:id="@+id/cancelRefundAmount"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/cancelFeeAmount"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rsThree" />
+
+        <View
+            android:id="@+id/cancelView"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/liteGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/cancelRefundAmount" />
+
+        <!--    <androidx.recyclerview.widget.RecyclerView-->
+        <!--        android:id="@+id/cancelRecycler"-->
+        <!--        android:layout_width="0dp"-->
+        <!--        android:layout_height="wrap_content"-->
+        <!--        android:layout_marginTop="8dp"-->
+        <!--        android:visibility="gone"-->
+        <!--        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+        <!--        app:layout_constraintEnd_toEndOf="@id/end"-->
+        <!--        app:layout_constraintHorizontal_bias="0.0"-->
+        <!--        app:layout_constraintStart_toStartOf="@id/start"-->
+        <!--        app:layout_constraintTop_toBottomOf="@+id/cancelTime" />-->
+
+
+        <TextView
+            android:id="@+id/cancelTotalCost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/service_cost"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/start1"
+            app:layout_constraintTop_toBottomOf="@+id/cancelView" />
+
+        <TextView
+            android:id="@+id/cancelTotalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikmedium"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/cancelTotalCost"
+            app:layout_constraintEnd_toStartOf="@+id/end" />
+
+        <TextView
+            android:id="@+id/cancelFee"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/cancellation_fee"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/start1"
+            app:layout_constraintTop_toBottomOf="@+id/cancelTotalCost" />
+
+        <TextView
+            android:id="@+id/cancelFeeAmounts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikmedium"
+            android:textColor="@color/redButton"
+            android:textSize="20sp"
+            app:layout_constraintBaseline_toBaselineOf="@+id/cancelFee"
+            app:layout_constraintEnd_toStartOf="@+id/end" />
+
+        <TextView
+            android:id="@+id/cancelRefunds"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/refundable_amount"
+            android:textColor="@color/black"
+            android:textSize="15sp"
+            app:layout_constraintStart_toStartOf="@+id/start1"
+            app:layout_constraintTop_toBottomOf="@+id/cancelFee" />
+
+        <TextView
+            android:id="@+id/cancelRefundAmounts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikmedium"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            app:drawableStartCompat="@drawable/ic_rupee_1x"
+            app:layout_constraintBaseline_toBaselineOf="@+id/cancelRefunds"
+            app:layout_constraintEnd_toStartOf="@+id/end" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cancelTermAndCondition"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@+id/start1"
+            app:layout_constraintTop_toBottomOf="@+id/cancelRefundAmounts">
+
+            <CheckBox
+                android:id="@+id/cancelCheckbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/aServiceAgree"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/i_hereby_declare_that_i_am_fully_aware_of_the_cancellation_policy_of_the_service_providers_and_i_wish_to_cancel_the_booking"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/cancelCheckbox"
+                app:layout_constraintTop_toTopOf="@+id/cancelCheckbox" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/checkOut"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/green"
+            android:letterSpacing="0"
+            android:text="@string/proceed_to_cancel"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@+id/start1"
+            app:layout_constraintTop_toBottomOf="@+id/cancelTermAndCondition" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

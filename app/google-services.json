@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1050700848789",
+    "firebase_url": "https://airportzo-dev-default-rtdb.firebaseio.com",
+    "project_id": "airportzo-dev",
+    "storage_bucket": "airportzo-dev.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1050700848789:android:b081f096145e2841b5459c",
+        "android_client_info": {
+          "package_name": "com.travel.airportzo.user"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1050700848789-ctb5pbeoephphrelsj119h7n1ojr3jes.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.travel.airportzo.user",
+            "certificate_hash": "a5d49fe5c08198b9eef0c1f8204f5803f000528e"
+          }
+        },
+        {
+          "client_id": "1050700848789-n0g66gjbake75k89cbr58vjn4sg8gq2v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDtXADtJBrEH4MM0v-RLVSnnrUzarZSzAg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1050700848789-n0g66gjbake75k89cbr58vjn4sg8gq2v.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "1050700848789-9upkfu6ucajeqsgbi34aj2omn9f3tev5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "MacappStudio.Airportzo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

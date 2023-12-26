@@ -1,0 +1,1099 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/aRootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/fullcurve">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/aAddTransitsLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="@+id/aRootLayout"
+            app:layout_constraintTop_toTopOf="@+id/aRootLayout">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/aRootLayoutImageStart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/aRootLayoutTextStart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="50dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/aRootLayoutEnd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <TextView
+                android:id="@+id/aHeadText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikmedium"
+                android:gravity="center"
+                android:text="@string/transit_journey"
+                android:textColor="@color/textcolor"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/close" />
+
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/close"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/ic_close_1x"
+                app:layout_constraintEnd_toStartOf="@+id/aRootLayoutEnd"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <View
+                android:id="@+id/aTopView"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintEnd_toEndOf="@id/aRootLayoutEnd"
+                app:layout_constraintStart_toStartOf="@id/aRootLayoutImageStart"
+                app:layout_constraintTop_toBottomOf="@id/aHeadText" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/aJourney1ImgView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_flight_grey_1x"
+                app:layout_constraintBottom_toBottomOf="@+id/aTopView"
+                app:layout_constraintEnd_toStartOf="@+id/aRootLayoutEnd"
+                app:layout_constraintStart_toStartOf="@+id/aRootLayoutImageStart"
+                app:layout_constraintTop_toBottomOf="@+id/aTopView" />
+
+            <!--layout 1    -->
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/aLayoutJourney1"
+                android:layout_width="0dp"
+                android:layout_height="260dp"
+                android:layout_marginTop="14dp"
+                app:layout_constraintEnd_toEndOf="@id/aRootLayoutEnd"
+                app:layout_constraintStart_toStartOf="@id/aRootLayoutImageStart"
+                app:layout_constraintTop_toBottomOf="@+id/aJourney1ImgView">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/aJourney1StartGuide"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="34dp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/aJourney1image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_flight_blue_1x"
+                    app:layout_constraintBottom_toBottomOf="@+id/aJourney1"
+                    app:layout_constraintStart_toStartOf="@+id/aLayoutJourney1"
+                    app:layout_constraintTop_toTopOf="@+id/aJourney1" />
+
+                <View
+                    android:id="@+id/aJourney1ImageLine"
+                    android:layout_width="2dp"
+                    android:layout_height="0dp"
+                    android:background="@color/green"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/aJourney1image"
+                    app:layout_constraintStart_toStartOf="@+id/aJourney1image"
+                    app:layout_constraintTop_toBottomOf="@id/aJourney1image" />
+
+                <TextView
+                    android:id="@+id/aJourney1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubikmedium"
+                    android:text="@string/journey_1"
+                    android:textColor="@color/textcolor"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/aJourney1StartGuide"
+                    app:layout_constraintTop_toTopOf="@id/aLayoutJourney1" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/aJourney1inside"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/logincurve"
+                    app:layout_constraintEnd_toEndOf="@id/aLayoutJourney1"
+                    app:layout_constraintStart_toStartOf="@id/aJourney1StartGuide"
+                    app:layout_constraintTop_toBottomOf="@+id/aJourney1">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney1left"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="15dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney1right"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="15dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney1center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.45" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney1top"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_begin="15dp" />
+
+                    <TextView
+                        android:id="@+id/aJourney1From"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/from"
+                        android:textSize="12sp"
+                        android:textColor="@color/greyText"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/aJourney1left"
+                        app:layout_constraintTop_toTopOf="@id/aJourney1top" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/aJourney1FromEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/rubikmedium"
+                        android:hint="@string/enter_airport"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/textcolor"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toStartOf="@id/aJourney1right"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@id/aJourney1left"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney1From"
+                        tools:ignore="LabelFor" />
+
+                    <View
+                        android:id="@+id/aJourney1View1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney1FromEdit" />
+
+                    <TextView
+                        android:id="@+id/aJourney1To"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/to"
+                        android:textSize="12sp"
+                        android:textColor="@color/greyText"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney1right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney1left"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney1View1" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/aJourney1toEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/rubikmedium"
+                        android:hint="@string/enter_airport"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/textcolor"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toStartOf="@id/aJourney1right"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="@id/aJourney1left"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney1To"
+                        tools:ignore="LabelFor" />
+
+                    <View
+                        android:id="@+id/aJourney1View2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney1toEdit" />
+
+                    <TextView
+                        android:id="@+id/aJourney1DepartureOn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/flight_date"
+                        android:textSize="12sp"
+                        android:textColor="@color/greyText"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney1center"
+                        app:layout_constraintStart_toStartOf="@+id/aJourney1left"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney1View2" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/aJourney1DepartureOnEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:background="@null"
+                        android:ems="1"
+                        android:fontFamily="@font/rubikmedium"
+                        android:maxLines="1"
+                        android:textColor="@color/textcolor"
+                        android:hint="Enter Flight Date"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney1center"
+                        app:layout_constraintStart_toStartOf="@+id/aJourney1left"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney1DepartureOn" />
+
+                    <View
+                        android:id="@+id/aJourney1CenterView"
+                        android:layout_width="1dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey"
+                        app:layout_constraintBottom_toBottomOf="@+id/aJourney1DepartureOnEdit"
+                        app:layout_constraintStart_toStartOf="@id/aJourney1center"
+                        app:layout_constraintTop_toTopOf="@+id/aJourney1DepartureOn" />
+
+                    <TextView
+                        android:id="@+id/aJourney1DepartureFlight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/flight_number"
+                        android:textColor="@color/greyText"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney1right"
+                        app:layout_constraintStart_toEndOf="@+id/aJourney1CenterView"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney1View2" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/aJourney1DepartureFlightEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:background="@null"
+                        android:ems="1"
+                        android:fontFamily="@font/rubikmedium"
+                        android:hint="Enter Flight Number"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColor="@color/textcolor"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@id/aJourney1right"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@id/aJourney1DepartureFlight"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney1DepartureFlight" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/aJourney1View3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="27dp"
+                    android:background="@color/liteGrey"
+                    app:layout_constraintEnd_toEndOf="@id/aLayoutJourney1"
+                    app:layout_constraintStart_toStartOf="@id/aJourney1StartGuide"
+                    app:layout_constraintTop_toBottomOf="@id/aJourney1inside" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--layout 2    -->
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/aLayoutJourney2"
+                android:layout_width="0dp"
+                android:layout_height="260dp"
+                app:layout_constraintEnd_toEndOf="@+id/aRootLayoutEnd"
+                app:layout_constraintStart_toStartOf="@id/aRootLayoutImageStart"
+                app:layout_constraintTop_toBottomOf="@+id/aLayoutJourney1">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/aJourney2StartGuide"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="34dp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/aJourney2image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_flight_blue_1x"
+                    app:layout_constraintStart_toStartOf="@+id/aLayoutJourney2"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/aJourney2ImageLine"
+                    android:layout_width="2dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@+id/aJourney2image"
+                    app:layout_constraintStart_toStartOf="@+id/aJourney2image"
+                    app:layout_constraintTop_toBottomOf="@id/aJourney2image" />
+
+                <TextView
+                    android:id="@+id/aJourney2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubikmedium"
+                    android:text="@string/journey_2"
+                    android:textColor="@color/textcolor"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/aJourney2StartGuide"
+                    app:layout_constraintTop_toTopOf="@id/aLayoutJourney2" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/aJourney2inside"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/logincurve"
+                    app:layout_constraintEnd_toEndOf="@id/aLayoutJourney2"
+                    app:layout_constraintStart_toStartOf="@id/aJourney2StartGuide"
+                    app:layout_constraintTop_toBottomOf="@+id/aJourney2">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney2left"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.0433526" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney2right"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="15dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney2center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.45" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney2top"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_begin="15dp" />
+
+                    <TextView
+                        android:id="@+id/aJourney2From"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/from"
+                        android:textColor="@color/greyText"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/aJourney2left"
+                        app:layout_constraintTop_toTopOf="@id/aJourney2top" />
+
+                    <TextView
+                        android:id="@+id/aJourney2FromEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:minHeight="40dp"
+                        android:fontFamily="@font/rubikmedium"
+                        android:hint="@string/enter_airport"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/textcolor"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toStartOf="@id/aJourney2right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney2left"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney2From"
+                        tools:ignore="LabelFor" />
+
+                    <View
+                        android:id="@+id/aJourney2View1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney2FromEdit" />
+
+
+                    <TextView
+                        android:id="@+id/aJourney2To"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/to"
+                        android:textSize="12sp"
+                        android:textColor="@color/greyText"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney2right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney2left"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney2View1" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/aJourney2toEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:fontFamily="@font/rubikmedium"
+                        android:hint="@string/enter_airport"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true"
+                        android:textAlignment="viewStart"
+                        android:textColor="@color/textcolor"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toStartOf="@id/aJourney2right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney2left"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney2To"
+                        tools:ignore="LabelFor" />
+
+                    <View
+                        android:id="@+id/aJourney2View2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney2toEdit" />
+
+                    <TextView
+                        android:id="@+id/aJourney2DepartureOn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/flight_date"
+                        android:textSize="12sp"
+                        android:textColor="@color/greyText"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney2center"
+                        app:layout_constraintStart_toStartOf="@+id/aJourney2left"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney2View2" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/aJourney2DepartureOnEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:background="@null"
+                        android:ems="1"
+                        android:fontFamily="@font/rubikmedium"
+                        android:maxLines="1"
+                        android:textColor="@color/textcolor"
+                        android:textSize="14sp"
+                        android:hint="Enter Flight Date"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney2center"
+                        app:layout_constraintStart_toStartOf="@+id/aJourney2left"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney2DepartureOn" />
+
+                    <View
+                        android:id="@+id/aJourney2CenterView"
+                        android:layout_width="1dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey"
+                        app:layout_constraintBottom_toBottomOf="@+id/aJourney2DepartureOnEdit"
+                        app:layout_constraintStart_toStartOf="@id/aJourney2center"
+                        app:layout_constraintTop_toTopOf="@+id/aJourney2DepartureOn" />
+
+                    <TextView
+                        android:id="@+id/aJourney2DepartFlight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/flight_number"
+                        android:textSize="12sp"
+                        android:textColor="@color/greyText"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney2right"
+                        app:layout_constraintStart_toEndOf="@+id/aJourney2CenterView"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney2View2" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/aJourney2DepartureFlightEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:background="@null"
+                        android:ems="1"
+                        android:fontFamily="@font/rubikmedium"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:hint="Enter Flight Number"
+                        android:textColor="@color/textcolor"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@id/aJourney2right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney2DepartFlight"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney2DepartFlight" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/aJourney2View3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="27dp"
+                    android:background="@color/liteGrey"
+                    app:layout_constraintEnd_toEndOf="@id/aLayoutJourney2"
+                    app:layout_constraintStart_toStartOf="@id/aJourney2StartGuide"
+                    app:layout_constraintTop_toBottomOf="@id/aJourney2inside" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--layout 3    -->
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/aLayoutJourney3"
+                android:layout_width="0dp"
+                android:layout_height="260dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/aRootLayoutEnd"
+                app:layout_constraintStart_toStartOf="@id/aRootLayoutImageStart"
+                app:layout_constraintTop_toBottomOf="@+id/aLayoutJourney2">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/aJourney3StartGuide"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="34dp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/aJourney3image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_flight_blue_1x"
+                    app:layout_constraintStart_toStartOf="@+id/aLayoutJourney3"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <View
+                    android:id="@+id/aJourney3ImageLine"
+                    android:layout_width="2dp"
+                    android:layout_height="wrap_content"
+                    android:background="@color/green"
+                    android:visibility="visible"
+                    app:layout_constraintEnd_toEndOf="@+id/aJourney3image"
+                    app:layout_constraintStart_toStartOf="@+id/aJourney3image"
+                    app:layout_constraintTop_toBottomOf="@id/aJourney3image" />
+
+                <TextView
+                    android:id="@+id/aJourney3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubikmedium"
+                    android:text="@string/journey_3"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@id/aJourney3StartGuide"
+                    app:layout_constraintTop_toTopOf="@id/aLayoutJourney3" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/aJourney3inside"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/logincurve"
+                    app:layout_constraintEnd_toEndOf="@id/aLayoutJourney3"
+                    app:layout_constraintStart_toStartOf="@id/aJourney3StartGuide"
+                    app:layout_constraintTop_toBottomOf="@+id/aJourney3">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney3left"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="15dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney3right"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="15dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney3center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.45" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney3top"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_begin="15dp" />
+
+                    <TextView
+                        android:id="@+id/aJourney3From"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/from"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/aJourney3left"
+                        app:layout_constraintTop_toTopOf="@id/aJourney3top" />
+
+                    <TextView
+                        android:id="@+id/aJourney3FromEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:minHeight="40dp"
+                        android:fontFamily="@font/rubikmedium"
+                        android:hint="@string/enter_airport"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toStartOf="@id/aJourney3right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney3left"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney3From"
+                        tools:ignore="LabelFor" />
+
+                    <View
+                        android:id="@+id/aJourney3View1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney3FromEdit" />
+
+
+                    <TextView
+                        android:id="@+id/aJourney3To"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/to"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney3right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney3left"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney3View1" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/aJourney3toEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:backgroundTint="@color/white"
+                        android:minHeight="40dp"
+                        android:fontFamily="@font/rubikmedium"
+                        android:hint="@string/enter_airport"
+                        android:imeOptions="actionDone"
+                        android:singleLine="true"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toStartOf="@id/aJourney3right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney3left"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney3To"
+                        tools:ignore="LabelFor" />
+
+                    <View
+                        android:id="@+id/aJourney3View2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney3toEdit" />
+
+                    <TextView
+                        android:id="@+id/aJourney3DepartureOn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/flight_date"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney3center"
+                        app:layout_constraintStart_toStartOf="@+id/aJourney3left"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney3View2" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/aJourney3DepartureOnEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:background="@null"
+                        android:ems="1"
+                        android:fontFamily="@font/rubikmedium"
+                        android:maxLines="1"
+                        android:hint="Enter Flight Date"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney3center"
+                        app:layout_constraintStart_toStartOf="@+id/aJourney3left"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney3DepartureOn" />
+
+                    <View
+                        android:id="@+id/aJourney3CenterView"
+                        android:layout_width="1dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey"
+                        app:layout_constraintBottom_toBottomOf="@+id/aJourney3DepartureOnEdit"
+                        app:layout_constraintStart_toStartOf="@id/aJourney3center"
+                        app:layout_constraintTop_toTopOf="@+id/aJourney3DepartureOn" />
+
+                    <TextView
+                        android:id="@+id/aJourney3DepartureFlight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/flight_number"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney3right"
+                        app:layout_constraintStart_toEndOf="@+id/aJourney3CenterView"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney3View2" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/aJourney3DepartureFlightEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="24dp"
+                        android:background="@null"
+                        android:ems="1"
+                        android:fontFamily="@font/rubikmedium"
+                        android:hint="Enter Flight Number"
+                        android:inputType="text"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@id/aJourney3right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney3DepartureFlight"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney3DepartureFlight" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <View
+                    android:id="@+id/aJourney3View3"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="27dp"
+                    android:background="@color/liteGrey"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="@id/aLayoutJourney3"
+                    app:layout_constraintStart_toStartOf="@id/aJourney3StartGuide"
+                    app:layout_constraintTop_toBottomOf="@id/aJourney3inside" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <!--layout 4    -->
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/aLayoutJourney4"
+                android:layout_width="0dp"
+                android:layout_height="225dp"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@+id/aRootLayoutEnd"
+                app:layout_constraintStart_toStartOf="@id/aRootLayoutImageStart"
+                app:layout_constraintTop_toBottomOf="@+id/aLayoutJourney3">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/aJourney4StartGuide"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="34dp" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/aJourney4image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_flight_blue_1x"
+                    app:layout_constraintStart_toStartOf="@+id/aLayoutJourney4"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/aJourney4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/rubikmedium"
+                    android:text="@string/journey_4"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@id/aJourney4StartGuide"
+                    app:layout_constraintTop_toTopOf="@id/aLayoutJourney4" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/aJourney4inside"
+                    android:layout_width="0dp"
+                    android:layout_height="190dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/logincurve"
+                    app:layout_constraintEnd_toEndOf="@id/aLayoutJourney4"
+                    app:layout_constraintStart_toStartOf="@id/aJourney4StartGuide"
+                    app:layout_constraintTop_toBottomOf="@+id/aJourney4">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney4left"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_begin="15dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney4right"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_end="15dp" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney4center"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        app:layout_constraintGuide_percent="0.45" />
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/aJourney4top"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_begin="15dp" />
+
+                    <TextView
+                        android:id="@+id/aJourney4From"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/from"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="@id/aJourney4left"
+                        app:layout_constraintTop_toTopOf="@id/aJourney4top" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/aJourney4FromEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="1"
+                        android:fontFamily="@font/rubikmedium"
+                        android:imeOptions="actionDone"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@id/aJourney4right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney4left"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney4From"
+                        tools:ignore="LabelFor" />
+
+                    <View
+                        android:id="@+id/aJourney4View1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney4FromEdit" />
+
+
+                    <TextView
+                        android:id="@+id/aJourney4To"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/to"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney4right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney4left"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney4View1" />
+
+                    <AutoCompleteTextView
+                        android:id="@+id/aJourney4toEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="1"
+                        android:fontFamily="@font/rubikmedium"
+                        android:imeOptions="actionDone"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@id/aJourney4right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney4left"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney4To"
+                        tools:ignore="LabelFor" />
+
+                    <View
+                        android:id="@+id/aJourney4View2"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey"
+                        app:layout_constraintTop_toBottomOf="@id/aJourney4toEdit" />
+
+                    <TextView
+                        android:id="@+id/aJourney4DepartureOn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/depart_on"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney4center"
+                        app:layout_constraintStart_toStartOf="@+id/aJourney4left"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney4View2" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/aJourney4DepartureOnEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="1"
+                        android:fontFamily="@font/rubikmedium"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney4center"
+                        app:layout_constraintStart_toStartOf="@+id/aJourney4left"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney4DepartureOn" />
+
+                    <View
+                        android:id="@+id/aJourney4CenterView"
+                        android:layout_width="1dp"
+                        android:layout_height="40dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@color/liteGrey"
+                        app:layout_constraintBottom_toBottomOf="@+id/aJourney4DepartureOnEdit"
+                        app:layout_constraintStart_toStartOf="@id/aJourney4center"
+                        app:layout_constraintTop_toTopOf="@+id/aJourney4DepartureOn" />
+
+                    <TextView
+                        android:id="@+id/aJourney4DepartureFlight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="10dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:text="@string/depart_flight_number"
+                        android:textSize="12sp"
+                        app:layout_constraintEnd_toStartOf="@+id/aJourney4right"
+                        app:layout_constraintStart_toEndOf="@+id/aJourney4CenterView"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney4View2" />
+
+                    <androidx.appcompat.widget.AppCompatEditText
+                        android:id="@+id/aJourney4DepartureFlightEdit"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:background="@null"
+                        android:ems="1"
+                        android:fontFamily="@font/rubikmedium"
+                        android:inputType="number"
+                        android:maxLines="1"
+                        android:textColor="@color/black"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toStartOf="@id/aJourney4right"
+                        app:layout_constraintStart_toStartOf="@id/aJourney4DepartureFlight"
+                        app:layout_constraintTop_toBottomOf="@+id/aJourney4DepartureFlight" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/aRemoveTransits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/remove_transit"
+            android:textColor="@color/batchColor"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintTop_toBottomOf="@id/aAddTransitsLayout" />
+
+        <TextView
+            android:id="@+id/aAddTransits"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:drawablePadding="5dp"
+            android:fontFamily="@font/rubikmedium"
+            android:text="@string/add_transit"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:drawableStartCompat="@drawable/ic_flight_solo_1x"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/aRemoveTransits" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/aSearchServiceButton"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="40dp"
+            android:backgroundTint="@color/green"
+            android:fontFamily="@font/rubikmedium"
+            android:text="@string/search_service"
+            android:textAllCaps="false"
+            android:textSize="16sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/aAddTransits" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/aSearchServiceButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:background="@color/cardColor"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/backImg"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:background="@drawable/artboard"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/back"
+            android:layout_width="30dp"
+            android:layout_height="?actionBarSize"
+            android:layout_marginStart="16dp"
+            android:src="@drawable/ic_back_1x"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/serviceName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikmedium"
+            android:layout_marginStart="20dp"
+            android:text="@string/service"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/back"
+            app:layout_constraintStart_toEndOf="@+id/back"
+            app:layout_constraintTop_toTopOf="@+id/back" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card1"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:layout_marginTop="60dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            app:layout_constraintTop_toBottomOf="@+id/back"
+            app:cardCornerRadius="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:strokeColor="#e6e6e6"
+            app:strokeWidth="3dp">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/bannerImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/meetandassist"
+                android:scaleType="fitXY"/>
+        </com.google.android.material.card.MaterialCardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/service_curve"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/backImg">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guide1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <View
+                android:id="@+id/imgView"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="60dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toTopOf="@id/layout2" />
+
+            <TextView
+                android:id="@+id/sService"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/service_starting"
+                android:textSize="12sp"
+                android:textColor="@color/greyText"
+                android:fontFamily="@font/rubikregular"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toBottomOf="@id/imgView" />
+
+            <TextView
+                android:id="@+id/fFrom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/from"
+                android:textColor="@color/textcolor"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@+id/bBookService"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toBottomOf="@id/sService" />
+
+            <TextView
+                android:id="@+id/sServiceAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:fontFamily="@font/rubikmedium"
+                android:textColor="@color/textcolor"
+                android:textSize="17sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/fFrom"
+                app:layout_constraintStart_toEndOf="@+id/fFrom"
+                app:drawableStartCompat="@drawable/ic_rupee_1x"
+                app:drawableTint="@color/textcolor" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bBookService"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/green"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/book_service"
+                android:textAllCaps="false"
+                app:cornerRadius="5dp"
+                app:layout_constraintEnd_toStartOf="@+id/guide1"
+                app:layout_constraintTop_toTopOf="@+id/sService" />
+
+            <View
+                android:id="@+id/bBookServiceView"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toBottomOf="@id/bBookService" />
+
+            <TextView
+                android:id="@+id/aAbout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/about"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toBottomOf="@id/bBookServiceView" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikmedium"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/aAbout"
+                app:layout_constraintStart_toEndOf="@+id/aAbout"
+                app:layout_constraintTop_toTopOf="@+id/aAbout" />
+
+            <TextView
+                android:id="@+id/aAboutPara"
+                android:layout_width="0dp"
+                android:layout_marginTop="10dp"
+                android:textSize="14sp"
+                android:textColor="@color/textcolor"
+                android:fontFamily="@font/rubikregular"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/aAbout"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintEnd_toEndOf="@id/guide1"/>
+
+            <View
+                android:id="@+id/aAboutView"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="30dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toBottomOf="@id/aAboutPara" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layout3"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@color/backgroundcolor"
+                app:layout_constraintEnd_toStartOf="@+id/guide1"
+                app:layout_constraintStart_toStartOf="@+id/guide"
+                app:layout_constraintTop_toBottomOf="@id/aAboutView">
+
+                <TextView
+                    android:id="@+id/aAvailableService"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/textcolor"
+                    android:text="@string/who_can_available_this_service"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:fontFamily="@font/rubikmedium"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/aAvailableServiceRec"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/aAvailableService"
+                    app:spanCount="3" />
+
+                <View
+                    android:id="@+id/aAvailableServiceView"
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@color/liteGrey"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/aAvailableServiceRec" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <TextView
+                android:id="@+id/wServiceGiven"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/textcolor"
+                android:text="@string/where_the_service_is_given"
+                android:fontFamily="@font/rubikmedium"
+                android:textSize="16sp"
+                app:layout_constraintTop_toBottomOf="@id/layout3"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintStart_toStartOf="@id/guide"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/serviceLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/guide1"
+                app:layout_constraintStart_toStartOf="@+id/guide"
+                app:layout_constraintTop_toBottomOf="@+id/wServiceGiven">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.33" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/center1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_percent="0.67" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/top"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="15dp" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/ongoingLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/logincurve"
+                    app:layout_constraintEnd_toEndOf="@id/center"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/top">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/arrivalCenter"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ongoingImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/arrival"
+                        android:layout_marginBottom="5dp"
+                        app:layout_constraintBottom_toTopOf="@+id/arrivalCenter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:gravity="center"
+                        android:text="@string/at_arrival"
+                        android:textColor="@color/textcolor"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/arrivalCenter" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/assignedLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="5dp"
+                    android:background="@drawable/logincurve"
+                    app:layout_constraintEnd_toEndOf="@id/center1"
+                    app:layout_constraintStart_toStartOf="@id/center"
+                    app:layout_constraintTop_toBottomOf="@id/top">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/departureCenter"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/assignImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/departure"
+                        app:layout_constraintBottom_toTopOf="@+id/departureCenter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:gravity="center"
+                        android:text="@string/at_departure"
+                        android:textColor="@color/textcolor"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/departureCenter" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/upcomingLayout"
+                    android:layout_width="0dp"
+                    android:layout_height="100dp"
+                    android:background="@drawable/logincurve"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@id/center1"
+                    app:layout_constraintTop_toBottomOf="@id/top">
+
+                    <androidx.constraintlayout.widget.Guideline
+                        android:id="@+id/transitsCenter"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        app:layout_constraintGuide_percent="0.5" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/upcomingImg"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="5dp"
+                        android:src="@drawable/transit"
+                        app:layout_constraintBottom_toTopOf="@+id/transitsCenter"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent" />
+
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:fontFamily="@font/rubikregular"
+                        android:gravity="center"
+                        android:text="@string/at_transit"
+                        android:textColor="@color/textcolor"
+                        android:textSize="14sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="@+id/transitsCenter" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/sServiceInclude"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/service_included"
+                android:textColor="@color/textcolor"
+                android:textSize="16sp"
+                android:fontFamily="@font/rubikmedium"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toBottomOf="@id/serviceLayout"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/sServiceIncludeRecycler"
+                android:layout_width="0dp"
+                android:layout_marginTop="10dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@id/sServiceInclude"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintStart_toStartOf="@id/guide"/>
+
+            <TextView
+                android:id="@+id/pPartner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/our_elite_partners"
+                android:textColor="@color/textcolor"
+                android:fontFamily="@font/rubikmedium"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toBottomOf="@id/sServiceIncludeRecycler"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/pPartnerRec"
+                android:layout_width="0dp"
+                android:layout_marginTop="10dp"
+                android:layout_height="wrap_content"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                app:layout_constraintTop_toBottomOf="@id/pPartner"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintStart_toStartOf="@id/guide"/>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/workLayout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/howitwork_background"
+                app:layout_constraintEnd_toStartOf="@+id/guide1"
+                app:layout_constraintStart_toStartOf="@+id/guide"
+                app:layout_constraintTop_toBottomOf="@+id/pPartnerRec">
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/aJourney1left"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="10dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/aJourney1right"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_end="16dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/aJourney1center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    app:layout_constraintGuide_begin="95dp" />
+
+                <androidx.constraintlayout.widget.Guideline
+                    android:id="@+id/aJourney1top"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    app:layout_constraintGuide_begin="10dp" />
+
+                <TextView
+                    android:id="@+id/cancel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/rubikmedium"
+                    android:gravity="center"
+                    android:text="@string/how_it_works"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="@+id/aJourney1left"
+                    app:layout_constraintTop_toTopOf="@+id/aJourney1top" />
+
+                <View
+                    android:id="@+id/reachedImgView"
+                    android:layout_width="2dp"
+                    android:layout_height="0dp"
+                    android:layout_marginStart="30dp"
+                    android:background="@drawable/downline_curve"
+                    android:layerType="software"
+                    app:layout_constraintBottom_toBottomOf="@+id/stepThree"
+                    app:layout_constraintStart_toStartOf="@+id/aJourney1left"
+                    app:layout_constraintTop_toBottomOf="@+id/stepOne" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/oneImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintEnd_toEndOf="@+id/reachedImgView"
+                    app:layout_constraintStart_toStartOf="@+id/reachedImgView"
+                    app:layout_constraintTop_toTopOf="@+id/stepOne"
+                    android:background="@drawable/service_image">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/stepA"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/twoImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintEnd_toEndOf="@+id/reachedImgView"
+                    app:layout_constraintStart_toStartOf="@+id/reachedImgView"
+                    app:layout_constraintTop_toTopOf="@+id/stepTwo"
+                    android:background="@drawable/service_image">
+
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/stepB"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/threeImage"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    app:layout_constraintEnd_toEndOf="@+id/reachedImgView"
+                    app:layout_constraintStart_toStartOf="@+id/reachedImgView"
+                    app:layout_constraintTop_toTopOf="@+id/stepThree"
+                    android:background="@drawable/service_image">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/stepC"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                   />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <TextView
+                    android:id="@+id/stepOne"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/rubikmedium"
+                    android:gravity="center"
+                    android:textColor="@color/howWork"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/aJourney1center"
+                    app:layout_constraintTop_toBottomOf="@+id/cancel" />
+
+                <TextView
+                    android:id="@+id/stepOneDes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/rubikregular"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/aJourney1right"
+                    app:layout_constraintStart_toStartOf="@+id/aJourney1center"
+                    app:layout_constraintTop_toBottomOf="@+id/stepOne" />
+
+                <TextView
+                    android:id="@+id/stepTwo"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/rubikmedium"
+                    android:textColor="@color/howWork"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/aJourney1center"
+                    app:layout_constraintTop_toBottomOf="@+id/stepOneDes" />
+
+                <TextView
+                    android:id="@+id/stepTwoDes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:fontFamily="@font/rubikregular"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toStartOf="@+id/aJourney1right"
+                    app:layout_constraintStart_toStartOf="@+id/aJourney1center"
+                    app:layout_constraintTop_toBottomOf="@+id/stepTwo" />
+
+                <TextView
+                    android:id="@+id/stepThree"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/rubikmedium"
+                    android:textColor="@color/howWork"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="@+id/aJourney1center"
+                    app:layout_constraintTop_toBottomOf="@+id/stepTwoDes" />
+
+                <TextView
+                    android:id="@+id/stepThreeDes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="40dp"
+                    android:fontFamily="@font/rubikregular"
+                    android:textColor="@color/black"
+                    android:textSize="14sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/aJourney1right"
+                    app:layout_constraintStart_toStartOf="@+id/aJourney1center"
+                    app:layout_constraintTop_toBottomOf="@+id/stepThree" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/bookService"
+                android:layout_width="0dp"
+                android:layout_height="66dp"
+                android:backgroundTint="@color/green"
+                android:text="@string/let_s_book_a_service"
+                android:textAllCaps="false"
+                android:letterSpacing="0"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:visibility="visible"
+                app:cornerRadius="8dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@id/workLayout"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                />
+
+            <View
+                android:id="@+id/bButtonView"
+                android:layout_width="0dp"
+                android:layout_height="20dp"
+                app:layout_constraintEnd_toEndOf="@id/guide1"
+                app:layout_constraintStart_toStartOf="@id/guide"
+                app:layout_constraintTop_toBottomOf="@id/bookService"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+
+

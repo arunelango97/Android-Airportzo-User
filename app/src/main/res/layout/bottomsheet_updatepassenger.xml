@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/topcurve"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/rootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <TextView
+            android:id="@+id/passengerdetail_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:fontFamily="@font/rubikmedium"
+            android:text="@string/contact_passenger_name"
+            android:textColor="@color/textcolor"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/passengerdetail_new"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/please_enter_the_new_passenger_details"
+            android:textColor="@color/greyText"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@id/passengerdetail_add" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/passangername_layout"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/otp_curve"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/passengerdetail_new">
+
+            <Spinner
+                android:id="@+id/passangername_spinner"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center|start"
+                android:entries="@array/sur_name_spinner"
+                android:spinnerMode="dropdown"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+
+
+            <View
+                android:id="@+id/passangername_view"
+                android:layout_width="1dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="10dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/passangername_spinner"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/passangername_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/contact_passenger_name"
+                android:textColor="@color/greyText"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/passangername_view"
+                app:layout_constraintTop_toTopOf="@+id/passangername_view" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/passangername_edittext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:ems="1"
+                android:maxLines="1"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/passangername_textview"
+                app:layout_constraintTop_toBottomOf="@+id/passangername_textview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/passangernumber_layout"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/otp_curve"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/passangername_layout">
+
+            <com.hbb20.CountryCodePicker
+                android:id="@+id/code"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                app:ccpDialog_textColor="@color/textcolor"
+                app:ccpDialog_searchEditTextTint="@color/textcolor"
+                app:ccp_contentColor="@color/textcolor"
+                app:ccp_showNameCode="false"
+                app:ccp_textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent" />
+
+
+            <View
+                android:id="@+id/passangernumber_view"
+                android:layout_width="1dp"
+                android:layout_height="36dp"
+                android:layout_marginStart="10dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/code"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/passangernumber_textview"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/mobile_number"
+                android:textColor="@color/greyText"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/passangernumber_view"
+                app:layout_constraintTop_toTopOf="@+id/passangernumber_view" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/passangernumber_edittext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:ems="1"
+                android:inputType="number"
+                android:maxLength="10"
+                android:maxLines="1"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/passangernumber_textview"
+                app:layout_constraintTop_toBottomOf="@+id/passangernumber_textview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/passangermail_layout"
+            android:layout_width="0dp"
+            android:layout_height="54dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/otp_curve"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/passangernumber_layout">
+
+            <TextView
+                android:id="@+id/passangermail_textview"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="9dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/contact_email_address"
+                android:textColor="@color/greyText"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/passangeremail_edittext"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:ems="1"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:textColor="@color/textcolor"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/passangermail_textview"
+                app:layout_constraintTop_toBottomOf="@id/passangermail_textview" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/passangeraddbutton"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/green"
+            android:letterSpacing="0"
+            android:visibility="visible"
+            android:text="@string/save_passenger"
+            android:textAllCaps="false"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/passangermail_layout" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/updatebutton"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/green"
+            android:letterSpacing="0"
+            android:text="Update Passenger"
+            android:visibility="visible"
+            android:textAllCaps="false"
+            app:cornerRadius="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/passangermail_layout" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/deletebutton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="40dp"
+            android:text="Delete Passenger"
+            android:textAllCaps="false"
+            android:textColor="@color/redButton"
+            android:visibility="visible"
+            app:cornerRadius="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/updatebutton"
+            app:strokeColor="@color/redButton"
+            app:strokeWidth="1dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

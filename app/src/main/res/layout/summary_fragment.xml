@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+
+    tools:context=".ui.fragments.SummaryFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/summaryRootLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/start"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="16dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/end"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="16dp" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintLayout"
+            android:layout_width="match_parent"
+            android:layout_height="90dp"
+            android:background="@drawable/gradient"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/summaryBack"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:src="@drawable/ic_back_1x"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/summaryBackText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/summary"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@+id/summaryBack"
+                app:layout_constraintStart_toEndOf="@+id/summaryBack"
+                app:layout_constraintTop_toTopOf="@+id/summaryBack" />
+
+            <TextView
+                android:id="@+id/summaryServiceText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/View"
+                android:textColor="@color/white"
+                android:fontFamily="@font/rubikregular"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="@+id/summaryBackText"
+                app:layout_constraintTop_toBottomOf="@+id/summaryBackText" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/currencyImage"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginEnd="30dp"
+                android:src="@drawable/ic_india_1x"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/summaryBackText"
+                app:layout_constraintTop_toTopOf="@+id/summaryBackText" />
+
+            <TextView
+                android:id="@+id/summaryPayText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/pay_using"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/currencyImage"
+                app:layout_constraintTop_toTopOf="@+id/summaryBackText" />
+
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/summarySpinner"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="4dp"
+                android:background="@null"
+                android:fontFamily="@font/rubikregular"
+                app:layout_constraintBottom_toBottomOf="@+id/currencyImage"
+                app:layout_constraintStart_toStartOf="@+id/summaryPayText"
+                app:layout_constraintTop_toBottomOf="@+id/summaryPayText" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/dropImage"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/ic__1xartboard"
+                app:layout_constraintBottom_toBottomOf="@+id/summarySpinner"
+                app:layout_constraintStart_toEndOf="@+id/summarySpinner"
+                app:layout_constraintTop_toTopOf="@+id/summarySpinner" />
+
+
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/textView8"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:fontFamily="@font/rubikregular"-->
+<!--                android:text="INR (₹)"-->
+<!--                android:textColor="@color/white"-->
+<!--                android:textSize="16sp"-->
+<!--                app:layout_constraintBaseline_toBaselineOf="@+id/summaryBackText"-->
+<!--                app:layout_constraintStart_toStartOf="@+id/summaryPayText" />-->
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/summaryService"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/your_services_for"
+            android:gravity="center"
+            android:layout_marginTop="17dp"
+            android:textColor="@color/textcolor"
+            android:textSize="14sp"
+            android:fontFamily="@font/rubikregular"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
+
+        <TextView
+            android:id="@+id/summaryAirport"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textcolor"
+            android:gravity="center"
+            android:layout_marginTop="2dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="@font/rubikmedium"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@id/summaryService" />
+
+<!--        <TextView-->
+<!--            android:id="@+id/summaryTime"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_marginTop="2dp"-->
+<!--            android:textSize="12sp"-->
+<!--            android:gravity="center"-->
+<!--            android:fontFamily="@font/rubikregular"-->
+<!--            android:text="26Sep;2022,16:30(GMT+05:30) to 28Sep;2022,16:30(GMT+05:30)"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/summaryAirport"-->
+<!--            app:layout_constraintEnd_toEndOf="@id/end"-->
+<!--            app:layout_constraintStart_toStartOf="@+id/start"/>-->
+
+
+        <View
+            android:id="@+id/summaryView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/liteGrey"
+            android:layout_marginTop="25dp"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/summaryAirport" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/summaryImageView"
+            android:layout_width="19dp"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_flight_grey_1x"
+            app:layout_constraintBottom_toBottomOf="@+id/summaryView"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/summaryView" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/summaryRecyclerView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/summaryView" />
+
+        <View
+            android:id="@+id/summaryRecycleView"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/liteGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/summaryRecyclerView" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/rewards"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/summaryRecycleView">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/summaryRewardImage"
+                android:layout_width="34dp"
+                android:layout_height="34dp"
+                android:src="@drawable/ic_coin_1x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/summaryRewards"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/rewards"
+                android:textColor="@color/textcolor"
+                android:textSize="15sp"
+                app:layout_constraintStart_toEndOf="@+id/summaryRewardImage"
+                app:layout_constraintTop_toTopOf="@+id/summaryRewardImage" />
+
+            <TextView
+                android:id="@+id/summaryRewardEarn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/you_will_earn"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/summaryRewardImage"
+                app:layout_constraintStart_toStartOf="@+id/summaryRewards"
+                app:layout_constraintTop_toBottomOf="@+id/summaryRewards" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/summaryRewardCount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="10 miles"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/summaryRewardEarn"
+                app:layout_constraintStart_toEndOf="@+id/summaryRewardEarn" />
+
+            <TextView
+                android:id="@+id/summaryWithOrder"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/with_this_order"
+                android:textSize="14sp"
+                app:layout_constraintBottom_toBottomOf="@+id/summaryRewardCount"
+                app:layout_constraintStart_toEndOf="@+id/summaryRewardCount" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/summaryRewardView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:visibility="gone"
+            android:background="@color/liteGrey"
+            android:layout_marginTop="15dp"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintTop_toBottomOf="@+id/rewards" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/coupon"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/summaryRewardView">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/summaryGift"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_gift_1x"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="5dp"
+                android:text="@string/coupon_amp_benefits"
+                android:textColor="@color/textcolor"
+                android:fontFamily="@font/rubikmedium"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/summaryGift"
+                app:layout_constraintTop_toTopOf="@+id/summaryGift" />
+
+            <TextView
+                android:id="@+id/couponCode"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/border_corner"
+                android:fontFamily="@font/rubikregular"
+                android:padding="8dp"
+                android:text="@string/apply_coupon"
+                android:textColor="@color/greyText"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+            <TextView
+                android:id="@+id/viewAllCoupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/view_all_coupon"
+                android:textColor="#28B9D5"
+                app:layout_constraintStart_toStartOf="@+id/couponCode"
+                app:layout_constraintTop_toBottomOf="@+id/couponCode" />
+
+
+            <TextView
+                android:id="@+id/removeCoupon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="@string/remove_coupon"
+                android:visibility="gone"
+                android:fontFamily="@font/rubikmedium"
+                android:textColor="#28B9D5"
+                app:layout_constraintStart_toStartOf="@+id/couponCode"
+                app:layout_constraintTop_toBottomOf="@+id/couponCode" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/redeemCancelButton"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cancel_redeem"
+            android:letterSpacing="0"
+            android:layout_marginTop="10sp"
+            android:textSize="15sp"
+            android:visibility="gone"
+            android:textAllCaps="false"
+            android:textColor="@color/batchColor"
+            android:fontFamily="@font/rubikmedium"
+            app:cornerRadius="8dp"
+            app:layout_constraintStart_toStartOf="@+id/coupon"
+            app:layout_constraintTop_toBottomOf="@+id/coupon"
+            app:strokeColor="@color/batchColor"
+            app:strokeWidth="1dp" />
+
+        <View
+            android:id="@+id/summaryRedeemView"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/liteGrey"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/coupon" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/amountLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            app:layout_constraintEnd_toStartOf="@+id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/summaryRedeemView">
+
+            <TextView
+                android:id="@+id/summaryPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="14dp"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/price_details"
+                android:textColor="@color/textcolor"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/summaryServiceCost"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/service_cost"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/summaryPrice" />
+
+            <TextView
+                android:id="@+id/summaryServicePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/_0"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/summaryServiceCost"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/summaryGst"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/gst"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/summaryServiceCost" />
+
+
+            <TextView
+                android:id="@+id/summaryGstPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/_0"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/summaryGst"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/ConFee"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/convenience_fee"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/summaryGst" />
+
+            <TextView
+                android:id="@+id/conFeePrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/_0"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/ConFee"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+            <TextView
+                android:id="@+id/conFeeTax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/convenience_fee_gst"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ConFee" />
+
+            <TextView
+                android:id="@+id/conFeeTaxPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/_0"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/conFeeTax"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/discountText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="Discount"
+                android:visibility="gone"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/conFeeTax" />
+
+            <TextView
+                android:id="@+id/discountAmount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/_0"
+                android:visibility="gone"
+                android:textSize="14sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/discountText"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/summaryPriceView"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="@color/liteGrey"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/amountLayout" />
+
+        <TextView
+            android:id="@+id/summaryTotalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/rubikmedium"
+            android:text="@string/total_amount"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/start"
+            app:layout_constraintTop_toBottomOf="@+id/summaryPriceView" />
+
+        <TextView
+            android:id="@+id/summaryTotalAmountPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikmedium"
+            android:text="@string/_0"
+            android:textColor="@color/textcolor"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintBaseline_toBaselineOf="@+id/summaryTotalAmount"
+            app:layout_constraintEnd_toStartOf="@+id/end" />
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/summaryCurrencyLayout"
+            android:layout_width="0dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/logincurve"
+            android:backgroundTint="#EAEAEA"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/summaryTotalAmount">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imageView"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_currency_conversion_1x"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/summaryCurrencyText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/check_your_total_amount_in_other_currencies"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/imageView"
+                app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+            <TextView
+                android:id="@+id/summaryCurrencyConvert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/check_now"
+                android:textColor="@color/blue"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/imageView"
+                app:layout_constraintStart_toStartOf="@+id/summaryCurrencyText"
+                app:layout_constraintTop_toBottomOf="@+id/summaryCurrencyText" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/checkOut"
+            android:layout_width="match_parent"
+            android:layout_height="66dp"
+            android:layout_marginStart="18dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="18dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/green"
+            android:fontFamily="@font/rubikmedium"
+            android:text="@string/checkout"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:visibility="visible"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/end"
+            app:layout_constraintHorizontal_bias="0.515"
+            app:layout_constraintStart_toStartOf="@id/start"
+            app:layout_constraintTop_toBottomOf="@+id/summaryCurrencyLayout" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/wifi"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton.pink"
+        android:layout_width="match_parent"
+        android:layout_height="66dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/wifi"
+        android:textAllCaps="false"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

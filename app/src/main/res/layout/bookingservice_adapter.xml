@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardName"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="10dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bookingServiceImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/mapbgcopy"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top" />
+
+    <TextView
+        android:id="@+id/cCardName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/rubikmedium"
+        android:text="@string/View"
+        android:textColor="@color/textcolor"
+        android:textSize="14sp"
+        app:layout_constraintStart_toEndOf="@id/bookingServiceImage"
+        app:layout_constraintTop_toTopOf="@+id/bookingServiceImage" />
+
+    <TextView
+        android:id="@+id/bookingServiceOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/rubikregular"
+        android:textColor="@color/greyText"
+        android:text="@string/order_id"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bookingServiceImage"
+        app:layout_constraintStart_toEndOf="@+id/bookingServiceImage" />
+
+    <TextView
+        android:id="@+id/bookingServiceOrderId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/View"
+        android:textColor="@color/greyText"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bookingServiceOrder"
+        app:layout_constraintStart_toEndOf="@+id/bookingServiceOrder" />
+
+    <View
+        android:id="@+id/bookingServiceView"
+        android:layout_width="1dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="5dp"
+        android:background="@color/liteGrey"
+        app:layout_constraintBottom_toBottomOf="@+id/bookingServiceOrderId"
+        app:layout_constraintStart_toEndOf="@+id/bookingServiceOrderId"
+        app:layout_constraintTop_toTopOf="@+id/bookingServiceOrderId" />
+
+    <TextView
+        android:id="@+id/bookingServiceTime"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/View"
+        android:textColor="@color/greyText"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bookingServiceOrderId"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/bookingServiceView" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cCardCloseImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:src="@drawable/ic_more_1x"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/top" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/top" />
+
+
+    <TextView
+        android:id="@+id/bookingPackageName"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/View"
+        android:textColor="@color/greyText"
+        android:textSize="12sp"
+        app:layout_constraintStart_toStartOf="@+id/bookingServiceOrder"
+        app:layout_constraintTop_toBottomOf="@+id/bookingServiceTime" />
+
+    <View
+        android:id="@+id/bookingServiceViewOne"
+        android:layout_width="1dp"
+        android:layout_height="15dp"
+        android:layout_marginStart="5dp"
+        android:background="@color/liteGrey"
+        app:layout_constraintBottom_toBottomOf="@+id/bookingPackageName"
+        app:layout_constraintStart_toEndOf="@+id/bookingPackageName"
+        app:layout_constraintTop_toTopOf="@+id/bookingPackageName" />
+
+
+    <TextView
+        android:id="@+id/bookingPackageCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/View"
+        android:textColor="@color/greyText"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bookingPackageName"
+        app:layout_constraintStart_toEndOf="@+id/bookingServiceViewOne" />
+
+    <TextView
+        android:id="@+id/adult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/adult"
+        android:textColor="@color/greyText"
+        android:textSize="12sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bookingPackageCount"
+        app:layout_constraintStart_toEndOf="@+id/bookingPackageCount" />
+
+
+    <TextView
+        android:id="@+id/bookingPackagePrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:fontFamily="@font/rubikmedium"
+        android:text="@string/View"
+        android:textColor="@color/textcolor"
+        android:textSize="14sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bookingPackageCount"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <View
+        android:id="@+id/nameView3"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="15dp"
+        android:background="#1D000000"
+        android:paddingBottom="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        style="?android:attr/ratingBarStyleIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:max="5"
+        android:progressTint="#F79600"
+        android:rating="3.5"
+        android:scaleX=".5"
+        android:scaleY=".5"
+        android:transformPivotX="0dp"
+        android:transformPivotY="0dp"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bookingPackageName"
+        app:layout_constraintTop_toBottomOf="@+id/bookingPackageName" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="@+id/nameView3"
+        app:layout_constraintEnd_toStartOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/bookingPackageName"
+        app:layout_constraintTop_toBottomOf="@+id/bookingPackageName">
+
+        <TextView
+            android:id="@+id/bookingRateUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/rate_us"
+            android:textColor="@color/blue"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/viewRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/view_rating"
+            android:textColor="@color/blue"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/viewReport"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/view_report"
+            android:textColor="@color/blue"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/bookingNotes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/rubikregular"
+            android:text="@string/view_notes"
+            android:textColor="@color/blue"
+            android:textSize="14sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/statusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
+        android:background="#F9D9D9"
+        android:backgroundTint="@color/ongoingBack"
+        android:drawablePadding="4dp"
+        android:padding="4dp"
+        android:text="@string/cancelled"
+        android:textColor="@color/redButton"
+        android:textSize="14sp"
+        android:visibility="gone"
+        app:drawableStartCompat="@drawable/ic_cancel_1x"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/bookingPackageName"
+        app:layout_constraintTop_toBottomOf="@+id/bookingPackageCount" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/bookingPackagePrice"
+        app:layout_constraintTop_toBottomOf="@+id/bookingPackagePrice">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_pin_1x"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/message"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:src="@drawable/ic_message_1x"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/location"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="10dp"
+                android:src="@drawable/ic_call_1x"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/message" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/statusView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/pending_roundcorner"
+            android:padding="5dp"
+            android:text="@string/pending"
+            android:drawableStart="@drawable/pending_timer"
+            android:drawablePadding="5dp"
+            android:textColor="@color/pending_text"
+            android:textSize="12sp" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

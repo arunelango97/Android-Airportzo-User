@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="250dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/logincurve"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/start"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/end"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="12dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="16dp" />
+
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/cCardImage"
+        android:layout_width="44dp"
+        android:layout_height="44dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/mapbgcopy"
+        app:layout_constraintStart_toStartOf="@+id/start"
+        app:layout_constraintTop_toTopOf="@+id/top" />
+
+    <TextView
+        android:id="@+id/bookedName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/rubikmedium"
+        android:text="@string/View"
+        android:textColor="@color/textcolor"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toStartOf="@+id/end"
+        app:layout_constraintStart_toEndOf="@id/cCardImage"
+        app:layout_constraintTop_toTopOf="@+id/cCardImage" />
+
+    <TextView
+        android:id="@+id/bookedTerminal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/rubikregular"
+        android:text="@string/View"
+        android:textColor="@color/liteGrey"
+        app:layout_constraintBottom_toBottomOf="@+id/cCardImage"
+        app:layout_constraintEnd_toStartOf="@+id/end"
+        app:layout_constraintStart_toStartOf="@+id/bookedName" />
+
+    <View
+        android:id="@+id/bookedView"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/liteGrey"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@+id/bookedTerminal" />
+
+    <TextView
+        android:id="@+id/bookedServiceName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/rubikregular"
+        android:text="Meet and greet assistant"
+        android:textSize="12sp"
+        android:textColor="@color/greyText"
+        app:layout_constraintTop_toBottomOf="@+id/bookedView"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"/>
+
+    <TextView
+        android:id="@+id/bookedServerName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/rubikmedium"
+        android:text="Mr. Brent Bridges"
+        android:textColor="@color/textcolor"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@id/end"
+        app:layout_constraintStart_toStartOf="@id/start"
+        app:layout_constraintTop_toBottomOf="@+id/bookedServiceName" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bookedLocation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
+        android:src="@drawable/ic_pin_1x"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/end"
+        app:layout_constraintTop_toBottomOf="@+id/bookedServerName" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bookedMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_message_1x"
+        app:layout_constraintBottom_toBottomOf="@+id/bookedLocation"
+        app:layout_constraintEnd_toStartOf="@+id/bookedLocation"
+        app:layout_constraintTop_toTopOf="@+id/bookedLocation" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bookedCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20dp"
+        android:src="@drawable/ic_call_1x"
+        app:layout_constraintBottom_toBottomOf="@+id/bookedMessage"
+        app:layout_constraintEnd_toStartOf="@+id/bookedMessage"
+        app:layout_constraintTop_toTopOf="@+id/bookedMessage" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

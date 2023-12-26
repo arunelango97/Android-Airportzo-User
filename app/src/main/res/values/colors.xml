@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="grey">#8F8F8F</color>
+    <color name="dark_grey">#7A7A7A</color>
+    <color name="liteGrey">#E6E4E4</color>
+    <color name="ourPartner">#EAEAEA</color>
+    <color name="batchColor">#FF5656</color>
+    <color name="blue">#07B3D2</color>
+    <color name="green">#84BC42</color>
+    <color name="hyperLink">#337ab7</color>
+    <color name="darkGreen">#7DD9AA</color>
+    <color name="gradient_center">#4ABFD5</color>
+    <color name="gradient_top">#07B3D2</color>
+    <color name="gradient_bottom">#07D2A6</color>
+    <color name="ticket_color">#fdf7e3</color>
+    <color name="brown">#907416</color>
+    <color name="background">#F8FBFB</color>
+    <color name="darkBlue">#2ba9bf</color>
+    <color name="review_background">#f79600</color>
+    <color name="ticket_top_background">#FFC629</color>
+    <color name="complete_booking">#E6F9D9</color>
+    <color name="completedTextColor">#6EA645</color>
+    <color name="cardColor">#9AE6EB</color>
+
+    <color name="gradientCardEnd">#fdfef9</color>
+    <color name="booked">#F8EAD9</color>
+    <color name="mile">#AFE1E9</color>
+    <color name="redButton">#DA4D4D</color>
+    <color name="red">#FF213D</color>
+    <color name="howWork">#956D10</color>
+    <color name="agentBack">#DAF4DF</color>
+    <color name="agentHowItWork">#FFE15C</color>
+    <color name="ongoingBack">#F9EAD9</color>
+    <color name="ongoingText">#BB6D1D</color>
+    <color name="pending_text">#6F41A6</color>
+
+<!--    light mode constants-->
+
+    <color name="textcolor">#000000</color>
+    <color name="secondary_textColor">#FFFFFF</color>
+    <color name="backgroundcolor">#FFFFFF</color>
+    <color name="homebackground">#F8FBFB</color>
+    <color name="bookingcard">#f8fbfb</color>
+    <color name="cardBg">#f8fbfb</color>
+    <color name="gradientCardStart">#fdfbee</color>
+    <color name="gradientCardCentre">#fdfdf3</color>
+    <color name="radioButton">#000000</color>
+    <color name="greyText">#8F8F8F</color>
+    <color name="policybg">#F6F6F6</color>
+    <color name="bottom_sheet_bg">#FFFFFF</color>
+
+</resources>

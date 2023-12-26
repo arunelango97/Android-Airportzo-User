@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/secondLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/fullcurve"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/contentTwo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            app:layout_constraintTop_toTopOf="parent"
+            android:fontFamily="@font/rubikmedium"
+            android:gravity="center"
+            android:text="@string/what_s_your_travel_plan"
+            android:textColor="@color/textcolor"
+            android:textSize="20sp" />
+
+        <RadioGroup
+            android:id="@+id/radioGate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@+id/contentTwo"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/direct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/direct_flight"
+                android:textColor="@color/greyText"
+                android:textSize="15sp" />
+
+            <RadioButton
+                android:id="@+id/transits"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="20dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/rubikmedium"
+                android:text="@string/i_have_transits"
+                android:textColor="@color/greyText"
+                android:textSize="15sp" />
+
+        </RadioGroup>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/callback"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/logincurve"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radioGate">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/aJourney1left"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="15dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/aJourney1right"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="15dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/aJourney1center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.45" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/aJourney1top"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_begin="15dp" />
+
+            <TextView
+                android:id="@+id/aJourney1From"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/from"
+                android:textSize="12sp"
+                android:textColor="@color/greyText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/aJourney1left"
+                app:layout_constraintTop_toTopOf="@id/aJourney1top" />
+
+            <AutoCompleteTextView
+                android:id="@+id/from"
+                app:layout_constraintEnd_toStartOf="@id/aJourney1right"
+                app:layout_constraintStart_toStartOf="@id/aJourney1left"
+                app:layout_constraintTop_toBottomOf="@id/aJourney1From"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/rubikmedium"
+                android:hint="@string/enter_airport"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/textcolor"
+                android:textSize="13sp"
+                tools:ignore="LabelFor" />
+
+            <View
+                android:id="@+id/aJourney1View1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintTop_toBottomOf="@id/from" />
+
+            <TextView
+                android:id="@+id/aJourney1To"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/to"
+                android:textColor="@color/greyText"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/aJourney1right"
+                app:layout_constraintStart_toStartOf="@id/aJourney1left"
+                app:layout_constraintTop_toBottomOf="@id/aJourney1View1" />
+
+            <AutoCompleteTextView
+                android:id="@+id/to"
+                app:layout_constraintEnd_toStartOf="@id/aJourney1right"
+                app:layout_constraintStart_toStartOf="@id/aJourney1left"
+                app:layout_constraintTop_toBottomOf="@id/aJourney1To"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:backgroundTint="@color/white"
+                android:fontFamily="@font/rubikmedium"
+                android:hint="@string/enter_airport"
+                android:imeOptions="actionDone"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/textcolor"
+                android:textSize="13sp"
+                tools:ignore="LabelFor"
+                />
+
+            <View
+                android:id="@+id/aJourney1View2"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintTop_toBottomOf="@id/to" />
+
+            <TextView
+                android:id="@+id/aJourney1Departure"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/flight_date"
+                android:textSize="12sp"
+                android:textColor="@color/grey"
+                app:layout_constraintEnd_toStartOf="@+id/aJourney1center"
+                app:layout_constraintStart_toStartOf="@+id/aJourney1left"
+                app:layout_constraintTop_toBottomOf="@+id/aJourney1View2" />
+
+            <TextView
+                android:id="@+id/DepartEdit"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:background="@null"
+                android:ems="1"
+                android:fontFamily="@font/rubikmedium"
+                android:maxLines="1"
+                android:textColor="@color/textcolor"
+                android:hint="Enter Flight Date"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@+id/aJourney1center"
+                app:layout_constraintStart_toStartOf="@+id/aJourney1left"
+                app:layout_constraintTop_toBottomOf="@+id/aJourney1Departure" />
+
+            <View
+                android:id="@+id/aJourney1CenterView"
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:background="@color/liteGrey"
+                app:layout_constraintBottom_toBottomOf="@+id/DepartEdit"
+                app:layout_constraintStart_toStartOf="@id/aJourney1center"
+                app:layout_constraintTop_toTopOf="@+id/aJourney1Departure" />
+
+            <TextView
+                android:id="@+id/aJourney1DepartureFlight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/rubikregular"
+                android:text="@string/flight_number"
+                android:textSize="12sp"
+                android:textColor="@color/greyText"
+                app:layout_constraintEnd_toStartOf="@+id/aJourney1right"
+                app:layout_constraintStart_toEndOf="@+id/aJourney1CenterView"
+                app:layout_constraintTop_toBottomOf="@+id/aJourney1View2" />
+
+            <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/DepartFlightEdit"
+                android:layout_width="0dp"
+                android:layout_height="24dp"
+                android:background="@null"
+                android:ems="1"
+                android:fontFamily="@font/rubikmedium"
+                android:maxLines="1"
+                android:textColor="@color/textcolor"
+                android:hint="Enter Flight Number"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toStartOf="@id/aJourney1right"
+                app:layout_constraintStart_toStartOf="@id/aJourney1DepartureFlight"
+                app:layout_constraintTop_toBottomOf="@+id/aJourney1DepartureFlight" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/bookService"
+            android:layout_width="0dp"
+            android:layout_height="66dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="20dp"
+            android:backgroundTint="@color/green"
+            android:fontFamily="@font/rubikmedium"
+            android:text="@string/search_service"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:visibility="visible"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/callback"
+            app:layout_constraintStart_toStartOf="@+id/callback"
+            app:layout_constraintTop_toBottomOf="@+id/callback" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
